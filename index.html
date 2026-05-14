@@ -4,181 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아마존 리셀 실전 마스터 클래스</title>
-    <meta name="description" content="왕초보도 가능한 아마존 리셀 실전 실습 강의. 첫 달러 수익을 위한 100% 실전형 밀착 코칭.">
-    <!-- Google Fonts -->
+    <meta name="description" content="왕초보도 가능한 아마존 리셀 실전 강의. 무료 강의로 시작해 3주 실습 과정과 수강 신청까지 한 페이지에서 확인하세요.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar (Optional but good for structure) -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="주요 메뉴">
         <div class="container nav-container">
-            <div class="logo">AMAZON <span>MASTER</span></div>
-            <a href="#cta" class="nav-btn">수강 신청</a>
+            <a class="logo" href="#hero" aria-label="Amazon Masterclass 홈">AMAZON <span>MASTER</span></a>
+            <div class="nav-links" aria-label="페이지 바로가기">
+                <a href="#free-lecture">무료강의</a>
+                <a href="#testimonials">후기</a>
+                <a href="#application" class="nav-btn">수강신청하기</a>
+            </div>
         </div>
     </nav>
 
-    <!-- 1. 메인 히어로 섹션 -->
-    <header class="hero-section" id="hero">
+    <header class="hero-section section-anchor" id="hero">
         <div class="container hero-container">
             <div class="hero-content fade-in-up">
-                <div class="badge">쉽고 완벽한 실전 강의</div>
-                <h1>아마존 리셀로<br>한 달 <span>100만 원</span> 벌기!</h1>
-                <h2>이론만 듣다 끝나는 강의는 이제 그만.<br>당신의 첫 달러 수익을 위한 100% 실전형 밀착 코칭이 시작됩니다.</h2>
-                <ul class="hero-checklist">
-                    <li><span class="icon">✔️</span> 복잡한 영어를 몰라도 OK</li>
-                    <li><span class="icon">✔️</span> 첫 소싱부터 FBA 입고까지 함께하는 실습</li>
-                    <li><span class="icon">✔️</span> 오늘 배워서 내일 바로 써먹는 진짜 노하우</li>
-                </ul>
-                <a href="#cta" class="cta-btn primary-btn">무료 실전 강의 신청하기</a>
-            </div>
-            <div class="hero-image fade-in-left">
-                <!-- User's image with arms crossed -->
-                <div class="image-wrapper glow-effect">
-                    <img src="./profile_arms_crossed.jpg.jpg" alt="아마존 글로벌 셀링 전문가 강사 프로필">
+                <p class="eyebrow">왕초보를 위한 아마존 리셀 실전 코칭</p>
+                <h1>아마존 리셀로<br>첫 수익 구조 만들기</h1>
+                <p class="hero-lead">계정 준비, 상품 소싱, FBA 입고, 판매 전략까지 직접 따라 하며 배우는 강의입니다. 첫 화면에서 무료 강의를 탐색하고 바로 신청할 수 있게 구성했습니다.</p>
+                <div class="hero-actions" aria-label="주요 행동">
+                    <a href="#free-lecture" class="cta-btn primary-btn">무료강의 보기</a>
+                    <a href="#application" class="cta-btn secondary-btn">수강신청하기</a>
+                    <a href="#testimonials" class="cta-btn ghost-btn">유튜브 후기 보기</a>
                 </div>
+                <ul class="trust-strip" aria-label="강의 핵심 정보">
+                    <li><strong>3주</strong><span>실습 과정</span></li>
+                    <li><strong>1:1</strong><span>피드백</span></li>
+                    <li><strong>FBA</strong><span>입고 실습</span></li>
+                </ul>
             </div>
+            <aside class="hero-profile fade-in-left" aria-labelledby="profile-title">
+                <img src="profile-arms-crossed.jpg" alt="아마존 글로벌 셀링 강사 프로필" width="1400" height="1960" loading="eager" decoding="async" fetchpriority="high">
+                <div class="profile-panel">
+                    <p class="eyebrow">강사/강의 소개</p>
+                    <h2 id="profile-title">최희락 강사</h2>
+                    <p>초보 셀러가 가장 자주 막히는 계정 세팅, 상품 판단, 입고 과정을 화면 기준으로 풀어주는 실전형 코치입니다.</p>
+                    <ul>
+                        <li>아마존 리셀 입문자 대상 실습 커리큘럼 운영</li>
+                        <li>상품 소싱과 마진 계산 체크리스트 제공</li>
+                        <li>수강 후 Q&A와 실행 피드백 지원</li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </header>
 
-    <!-- 2. 무료 강의 안내 -->
-    <section class="benefits-section" id="benefits">
-        <div class="container">
-            <div class="section-header text-center fade-in-up">
-                <h2>왜 이 무료 강의를 당장 들어야 할까요?</h2>
-                <p>뜬구름 잡는 소리는 하지 않습니다. 당장 시작할 수 있는 '행동 지침'만 알려드립니다.</p>
+    <main>
+        <section class="free-lecture-section section-anchor" id="free-lecture">
+            <div class="container split-container">
+                <div class="section-copy fade-in-up">
+                    <p class="eyebrow">무료 강의 수강 영역</p>
+                    <h2>30분 안에 아마존 리셀의 전체 흐름을 잡습니다</h2>
+                    <p>무료 강의에서는 “무엇부터 해야 하는지”를 선명하게 만듭니다. 강의가 맞는지 확인하고, 바로 다음 실행 체크리스트를 가져갈 수 있습니다.</p>
+                    <div class="hero-actions">
+                        <a href="#application" class="cta-btn primary-btn">무료 강의 신청하기</a>
+                        <a href="#curriculum" class="cta-btn secondary-btn">전체 과정 보기</a>
+                    </div>
+                </div>
+                <div class="lecture-card fade-in-up delay-1" aria-label="무료 강의 구성">
+                    <div class="lecture-meta">
+                        <span>무료</span>
+                        <span>입문자용</span>
+                        <span>온라인 안내</span>
+                    </div>
+                    <h3>무료 강의에서 다루는 내용</h3>
+                    <ol>
+                        <li>아마존 리셀 구조와 수익이 나는 흐름</li>
+                        <li>초보자가 피해야 할 상품과 확인해야 할 지표</li>
+                        <li>계정 준비부터 FBA 입고까지의 실전 순서</li>
+                    </ol>
+                    <p class="small-note">신청 후 안내 메일로 강의 링크와 준비물 체크리스트를 보내드립니다.</p>
+                </div>
             </div>
-            <div class="benefits-grid">
-                <div class="benefit-card glass-card fade-in-up delay-1">
-                    <div class="card-icon">1</div>
-                    <h3>벽을 허무는 첫걸음, 셀러 계정 완벽 세팅</h3>
-                    <p>복잡하고 까다로운 아마존 가입? 더 이상 헤매지 마세요. 막힘없이 한 번에 통과하는 계정 생성의 비밀을 공개합니다.</p>
-                </div>
-                <div class="benefit-card glass-card fade-in-up delay-2">
-                    <div class="card-icon">2</div>
-                    <h3>리스크 제로! 첫 아이템 소싱의 핵심 공식</h3>
-                    <p>무엇을 팔아야 할지 막막하신가요? 자본금 걱정 없이 시작할 수 있는 한국 스낵/식품류 소싱의 기초와 시장 조사 방법을 떠먹여 드립니다.</p>
-                </div>
-                <div class="benefit-card glass-card fade-in-up delay-3">
-                    <div class="card-icon">3</div>
-                    <h3>안 팔릴 수 없는 아마존 생태계의 이해</h3>
-                    <p>내 상품이 미국 소비자에게 노출되고 판매되는 원리, 초보자도 1시간이면 완벽하게 이해할 수 있도록 쉽게 풀어드립니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 3. 압도적인 수강생 후기 -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-header text-center fade-in-up">
-                <h2>이미 수많은 왕초보가 증명한 <span>압도적인 결과!</span></h2>
-                <p>100% 실습형 강의가 만든 진짜 변화를 확인하세요.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card glass-card fade-in-up delay-1">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <h3>"막힐 틈이 없는 1:1 밀착 코칭! 피드백 속도에 놀랐습니다."</h3>
-                    <p>"강의만 듣고 혼자 하려면 분명 막막했을 텐데, 1:1 코칭 덕분에 막히는 부분마다 바로바로 피드백을 받을 수 있어서 너무 든든했습니다. 제 속도에 맞춰 이끌어주신 덕분에 중간에 포기하지 않고 끝까지 해낼 수 있었어요. 실전에 특화된 최고의 강의입니다!"</p>
-                    <div class="student-info">- 수강생 김*진님</div>
+        <section class="benefits-section section-anchor" id="benefits">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <p class="eyebrow">What you get</p>
+                    <h2>수강생이 가져가는 실행 결과</h2>
+                    <p>막연한 동기부여보다 중요한 것은 오늘 어떤 버튼을 누르고 어떤 기준으로 판단할지 아는 것입니다.</p>
                 </div>
-                <div class="testimonial-card glass-card fade-in-up delay-2">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <h3>"컴맹에 영알못인 저도 첫 아마존 판매에 성공했습니다 ㅠㅠ!"</h3>
-                    <p>"컴퓨터도 잘 못 다루고 영어는 까막눈이라, '아마존 수출'은 저와는 전혀 상관없는 남의 이야기인 줄만 알았습니다. 하지만 강사님이 하라는 대로 화면을 보며 무작정 따라 하기만 했는데... 어느새 제 상품이 미국에 팔리고 있더라고요! 제 인생의 전환점이 된 감동적인 수업입니다."</p>
-                    <div class="student-info">- 수강생 이*훈님</div>
+                <div class="benefits-grid">
+                    <article class="benefit-card glass-card fade-in-up delay-1">
+                        <div class="card-index">1</div>
+                        <h3>계정 준비와 기본 세팅</h3>
+                        <p>가입, 인증, 셀러 계정 준비 과정을 순서대로 점검해 초반 이탈을 줄입니다.</p>
+                    </article>
+                    <article class="benefit-card glass-card fade-in-up delay-2">
+                        <div class="card-index">2</div>
+                        <h3>상품 소싱 기준</h3>
+                        <p>시장 조사, 마진 계산, 리스크 판단 기준을 익혀 팔 만한 상품과 피할 상품을 구분합니다.</p>
+                    </article>
+                    <article class="benefit-card glass-card fade-in-up delay-3">
+                        <div class="card-index">3</div>
+                        <h3>FBA 입고 흐름</h3>
+                        <p>국내 준비부터 미국 아마존 창고 입고까지 필요한 화면과 체크포인트를 따라갑니다.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 4. 핵심 커리큘럼 소개 -->
-    <section class="curriculum-section" id="curriculum">
-        <div class="container">
-            <div class="section-header text-center fade-in-up">
-                <h2>단 3주, 왕초보에서 아마존 셀러로 거듭나는<br><span>핵심 커리큘럼</span></h2>
-            </div>
-            
-            <div class="curriculum-timeline">
-                <!-- Week 1 -->
-                <div class="timeline-item fade-in-up delay-1">
-                    <div class="timeline-week">1주 차</div>
-                    <div class="timeline-content glass-card border-accent">
-                        <h3>[기초 완벽 세팅] 첫 단추부터 탄탄하게, 실패 없는 셀러 준비</h3>
-                        <ul>
-                            <li><strong>아마존 비즈니스의 이해:</strong> 글로벌 마켓의 흐름과 아마존 생태계 파악</li>
-                            <li><strong>셀러 계정 생성 실습:</strong> 반려 없는 빠르고 정확한 가입 절차 동행</li>
-                            <li><strong>아이템 소싱 기초:</strong> 초보자에게 딱 맞는 한국 스낵/식품류 발굴 노하우</li>
-                            <li><strong>키워드 분석 및 마진 계산:</strong> 돈이 되는 키워드 찾기와 남는 장사를 위한 마진율 완벽 계산법</li>
-                        </ul>
-                    </div>
+        <section class="curriculum-section section-anchor" id="curriculum">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <p class="eyebrow">3-week curriculum</p>
+                    <h2>초보자에서 실행자로 넘어가는 3주 과정</h2>
                 </div>
-                
-                <!-- Week 2 -->
-                <div class="timeline-item fade-in-up delay-2">
-                    <div class="timeline-week">2주 차</div>
-                    <div class="timeline-content glass-card border-accent">
-                        <h3>[실전 판매 돌입] 내 상품을 전 세계에 선보이는 시간</h3>
-                        <ul>
-                            <li><strong>매력적인 리스팅:</strong> 고객의 지갑을 여는 상세페이지 및 상품 등록(Listing) 전략</li>
-                            <li><strong>배송 프로세스 마스터:</strong> 국내에서 미국까지, 복잡한 물류의 명쾌한 정리</li>
-                            <li><strong>FBA 입고 실습:</strong> 아마존이 대신 배송해 주는 FBA 시스템 입고 및 바코드(UPC) 발급/부착 가이드</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Week 3 -->
-                <div class="timeline-item fade-in-up delay-3">
-                    <div class="timeline-week">3주 차</div>
-                    <div class="timeline-content glass-card border-accent">
-                        <h3>[매출 극대화] 팔리는 구조를 넘어 쏟아지는 주문 만들기</h3>
-                        <ul>
-                            <li><strong>상위 노출 판매 전략:</strong> 경쟁자를 압도하고 1페이지에 진입하는 비법</li>
-                            <li><strong>아마존 광고(PPC) 실전:</strong> 최소 비용으로 최대 효율을 내는 광고 세팅 및 운영</li>
-                            <li><strong>지속 가능한 아이템 발굴:</strong> 일회성 판매가 아닌, 꾸준한 효자 아이템을 찾는 롱런 전략</li>
-                        </ul>
-                    </div>
+                <div class="curriculum-timeline">
+                    <article class="timeline-item fade-in-up delay-1">
+                        <div class="timeline-week">1주차</div>
+                        <div class="timeline-content glass-card border-accent">
+                            <h3>기초 환경 세팅</h3>
+                            <ul>
+                                <li><strong>비즈니스 이해:</strong> 아마존 리셀 구조와 수익 흐름 파악</li>
+                                <li><strong>계정 준비:</strong> 가입, 인증, 필수 준비물 체크</li>
+                                <li><strong>소싱 기초:</strong> 초보자가 피해야 할 상품과 볼 만한 상품 구분</li>
+                                <li><strong>마진 계산:</strong> 수수료, 배송비, 광고비를 고려한 기본 계산법</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item fade-in-up delay-2">
+                        <div class="timeline-week">2주차</div>
+                        <div class="timeline-content glass-card border-accent">
+                            <h3>상품 등록과 FBA 입고</h3>
+                            <ul>
+                                <li><strong>리스팅 작성:</strong> 고객이 이해하기 쉬운 상품 페이지 구성</li>
+                                <li><strong>배송 프로세스:</strong> 국내 준비부터 미국 창고 입고까지의 흐름</li>
+                                <li><strong>바코드와 라벨:</strong> FBA 입고에 필요한 기본 작업 실습</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item fade-in-up delay-3">
+                        <div class="timeline-week">3주차</div>
+                        <div class="timeline-content glass-card border-accent">
+                            <h3>판매 전략과 반복 구조</h3>
+                            <ul>
+                                <li><strong>검색 노출:</strong> 키워드와 상세페이지 개선 방향</li>
+                                <li><strong>광고 기초:</strong> 작은 예산으로 테스트하는 PPC 운영 방식</li>
+                                <li><strong>지속 가능한 소싱:</strong> 한 번 팔고 끝나지 않는 상품 후보 관리법</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <!-- Post Care -->
-            <div class="post-care-box glass-card text-center fade-in-up delay-4">
-                <div class="care-badge">🎁 특별 혜택</div>
-                <h3>끝나지 않는 사후 관리 (Post-Care)</h3>
-                <div class="care-features">
-                    <div class="care-item">
-                        <span class="icon">🔒</span>
-                        <p>수료생 전용<br>시크릿 커뮤니티 초대</p>
-                    </div>
-                    <div class="care-item">
-                        <span class="icon">💬</span>
-                        <p>지속적인 Q&A 및<br>실시간 피드백</p>
-                    </div>
-                    <div class="care-item">
-                        <span class="icon">🤝</span>
-                        <p>셀러 네트워킹을 위한<br>오프라인 모임 지원</p>
-                    </div>
+        <section class="testimonials-section section-anchor" id="testimonials">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <p class="eyebrow">Student proof</p>
+                    <h2>유튜브 수강후기와 수강생 반응</h2>
+                    <p>실제 후기 영상이 준비되면 아래 임베드 주소만 교체하면 됩니다. 영상이 없어도 후기 목록이 바로 신뢰 자료로 작동합니다.</p>
                 </div>
-                <!-- User's second image -->
-                <div class="instructor-small-img mt-3">
-                    <img src="./profile_smile.jpg.jpg" alt="강사님 미소 프로필" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent-color);">
+                <div class="testimonial-layout">
+                    <article class="video-card fade-in-up delay-1" aria-label="유튜브 후기 영상">
+                        <div class="video-frame">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="아마존 리셀 강의 수강후기 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-copy">
+                            <h3>유튜브 후기 보기</h3>
+                            <p>실제 후기 영상 URL이 생기면 `src`만 교체하세요. 카드 크기와 반응형 비율은 유지됩니다.</p>
+                        </div>
+                    </article>
+                    <div class="testimonial-list">
+                        <article class="testimonial-card glass-card fade-in-up delay-2">
+                            <p class="stars" aria-label="별점 5점">★★★★★</p>
+                            <h3>막히는 지점마다 바로 피드백을 받을 수 있어 좋았습니다.</h3>
+                            <p>계정 세팅부터 상품 등록까지 혼자 했다면 중간에 포기했을 것 같습니다. 화면을 보며 따라가니 훨씬 현실적으로 느껴졌습니다.</p>
+                            <p class="student-info">수강생 김*진</p>
+                        </article>
+                        <article class="testimonial-card glass-card fade-in-up delay-3">
+                            <p class="stars" aria-label="별점 5점">★★★★★</p>
+                            <h3>컴퓨터와 영어가 약해도 따라갈 수 있었습니다.</h3>
+                            <p>처음에는 아마존 판매가 너무 멀게 느껴졌는데, 단계별 체크리스트가 있어 지금 무엇을 해야 하는지 분명해졌습니다.</p>
+                            <p class="student-info">수강생 이*현</p>
+                        </article>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 5. 콜투액션 -->
-    <section class="cta-section" id="cta">
-        <div class="container text-center fade-in-up">
-            <h2>망설이는 지금 이 순간에도,<br>누군가는 달러를 벌고 있습니다.</h2>
-            <p>1:1 밀착 코칭의 질을 유지하기 위해 무료 강의는 소수 정예 선착순으로 마감됩니다.<br>당신의 첫 달러 수익, 지금 바로 기회를 잡으세요!</p>
-            <a href="#" class="cta-btn primary-btn pulse-animation">🚨 선착순 마감 임박! 무료 실전 강의 신청하기 🚨</a>
-            <div class="urgency-text mt-2">현재 <span class="highlight">3자리</span> 남았습니다!</div>
-        </div>
-    </section>
+        <section class="post-care-section section-anchor" id="support">
+            <div class="container support-container fade-in-up">
+                <div>
+                    <p class="eyebrow">After class</p>
+                    <h2>강의가 끝나도 실행은 계속됩니다</h2>
+                    <p>수강 후에도 커뮤니티, Q&A, 오프라인 모임을 통해 실행 리듬을 이어갈 수 있게 돕습니다.</p>
+                </div>
+                <ul class="support-list" aria-label="수료 후 지원">
+                    <li><strong>커뮤니티 초대</strong><span>수강생 전용 채널에서 진행 상황을 공유합니다.</span></li>
+                    <li><strong>Q&A 피드백</strong><span>막히는 화면과 의사결정 지점을 함께 점검합니다.</span></li>
+                    <li><strong>오프라인 모임</strong><span>지속 실행을 돕는 스터디와 네트워킹을 지원합니다.</span></li>
+                </ul>
+                <img class="instructor-avatar" src="profile-smile.jpg" alt="미소 짓는 강사 프로필" width="1400" height="1960" loading="lazy" decoding="async">
+            </div>
+        </section>
+
+        <section class="application-section section-anchor" id="application">
+            <div class="container application-container fade-in-up">
+                <div>
+                    <p class="eyebrow">Apply now</p>
+                    <h2>지금 신청하고 첫 실행 계획을 받아보세요</h2>
+                    <p>정원은 소수로 운영됩니다. 신청 후 안내 메시지에서 일정, 준비물, 무료 강의 링크를 확인할 수 있습니다.</p>
+                    <div class="contact-options" aria-label="대체 신청 방법">
+                        <a href="mailto:resellcoach34@gmail.com">이메일 문의</a>
+                        <a href="#free-lecture">무료 강의 다시 보기</a>
+                    </div>
+                </div>
+                <form class="application-form" id="course-application" action="mailto:resellcoach34@gmail.com" method="post" enctype="text/plain">
+                    <label>
+                        이름
+                        <input type="text" name="name" autocomplete="name" required>
+                    </label>
+                    <label>
+                        연락처
+                        <input type="tel" name="phone" autocomplete="tel" required>
+                    </label>
+                    <label>
+                        궁금한 점
+                        <textarea name="message" rows="4" placeholder="현재 가장 막히는 부분을 적어주세요."></textarea>
+                    </label>
+                    <button class="cta-btn primary-btn" type="submit">수강신청하기</button>
+                    <p class="form-note">메일 앱이 열리지 않으면 <span>resellcoach34@gmail.com</span> 으로 이름과 연락처를 보내주세요.</p>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container text-center">
@@ -186,7 +244,6 @@
         </div>
     </footer>
 
-    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
