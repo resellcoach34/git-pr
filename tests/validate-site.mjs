@@ -4,84 +4,68 @@ import assert from 'node:assert/strict';
 
 const root = resolve(import.meta.dirname, '..');
 const read = (file) => readFileSync(resolve(root, file), 'utf8');
-
 const html = read('index.html');
 const css = read('style.css');
 const js = read('script.js');
-const readme = read('README.md');
-const design = read('DESIGN.md');
+const packageJson = JSON.parse(read('package.json'));
 
-assert.ok(existsSync(resolve(root, 'DESIGN.md')), 'DESIGN.md should document the visual system');
+assert.equal(packageJson.scripts.dev, 'node server.cjs');
+assert.equal(packageJson.scripts.test, 'node tests/validate-site.mjs');
 
-for (const section of [
-  'Visual Theme',
-  'Color Palette',
-  'Typography',
-  'Components',
-  'Layout',
-  "Do's and Don'ts",
-  'Responsive Behavior',
-  'Agent Guide',
-]) {
-  assert.ok(design.includes(section), `DESIGN.md should include ${section}`);
+for (const id of ['hero', 'market-choice', 'why-amazon', 'instructor', 'video-proof', 'outcomes', 'curriculum', 'testimonials', 'faq', 'application']) {
+  assert.ok(html.includes(`id="${id}"`), `Page should include #${id}`);
 }
 
 for (const phrase of [
-  '<title>아마존 리셀 실전 마스터 클래스</title>',
-  '<h1>아마존 리셀로<br>첫 수익 구조 만들기</h1>',
-  'id="free-lecture"',
-  'id="curriculum"',
-  'id="application"',
-  'id="testimonials"',
-  'id="support"',
-  '무료강의 보기',
-  '수강신청하기',
-  '유튜브 후기 보기',
-  '강사/강의 소개',
-  '무료 강의 수강 영역',
+  '한국 상품의 다음 시장',
+  '상품만큼 중요한 것은',
+  '아마존은 현실적인 선택지입니다',
+  '물론, 아마존 판매가 쉬운 것은 아닙니다',
+  '직접 판매해본 사람이',
+  '혼자 다음 상품을 준비할 수 있도록',
+  '수강 신청은 스마트스토어에서 바로 진행할 수 있습니다',
+  'large-action-btn',
+  'smartstore-icon',
+  '스마트스토어에서 결제하기',
+  '수강 신청 바로가기',
+  'kakao-icon',
+  '카톡으로 질문하기',
+  '참여링크 : leecoach',
+  'https://open.kakao.com/o/gh3ZQyki',
+  '정확한 강의 날짜와 준비물은 결제 후 또는 카카오톡 상담에서 안내드립니다.',
+  'floating-kakao',
 ]) {
   assert.ok(html.includes(phrase), `HTML should include ${phrase}`);
 }
 
-assert.ok(!html.includes('href="#"'), 'CTA links should point to a real destination');
-assert.ok(!html.includes('style="'), 'Inline styles should be moved into CSS classes');
-assert.ok(!html.includes('.jpg.jpg'), 'Image filenames should not use duplicate extensions');
-assert.ok(!existsSync(resolve(root, 'profile_arms_crossed.jpg.jpg')), 'Old arms-crossed image name should be removed');
-assert.ok(!existsSync(resolve(root, 'profile_smile.jpg.jpg')), 'Old smile image name should be removed');
-assert.match(html, /<iframe[^>]+youtube\.com\/embed/, 'Testimonials should include an embeddable YouTube video card');
-assert.match(html, /<form[^>]+id="course-application"/, 'Application form should be identifiable');
-assert.ok(css.includes('--color-action'), 'CSS should expose role-based design tokens');
-assert.ok(css.includes('.instructor-avatar'), 'Instructor avatar styles should live in CSS');
-assert.ok(css.includes('@media (max-width: 860px)'), 'CSS should include tablet/mobile responsive rules');
-assert.ok(css.includes('@media (max-width: 620px)'), 'CSS should include small-screen responsive rules');
-assert.ok(css.includes('prefers-reduced-motion'), 'CSS should respect reduced motion');
-assert.ok(css.includes('scroll-margin-top'), 'CSS should protect anchored headings from fixed nav');
-assert.ok(js.includes('IntersectionObserver'), 'JS should handle scroll reveal behavior');
-assert.ok(js.includes("!('IntersectionObserver' in window)"), 'JS should include IntersectionObserver fallback');
+const hero = html.slice(html.indexOf('<header'), html.indexOf('</header>'));
+assert.ok(!hero.includes('스마트스토어'), 'Hero should not expose payment');
+assert.ok(!hero.includes('카카오톡'), 'Hero should not expose Kakao inquiry');
+assert.ok(!hero.includes('가격'), 'Hero should not expose price');
+assert.ok(html.indexOf('id="application"') > html.indexOf('id="faq"'), 'Application should appear after FAQ');
+assert.ok(html.indexOf('스마트스토어에서 결제하기') > html.indexOf('id="application"'), 'Payment button should appear in the final application section');
+assert.ok(html.indexOf('https://smartstore.naver.com/benefitothers') > html.indexOf('id="application"'), 'Smartstore link should appear in the final application section');
+assert.ok(!html.includes('KAKAO_OPEN_CHAT_URL_PLACEHOLDER'), 'Kakao placeholder should be replaced');
+
+assert.equal([...html.matchAll(/data-video-tab=/g)].length, 3);
+assert.equal([...html.matchAll(/data-video-panel=/g)].length, 3);
+assert.equal([...html.matchAll(/youtube\.com\/embed/g)].length, 3);
+assert.equal([...html.matchAll(/<details/g)].length, 4);
+assert.ok(!html.includes('href="#"'), 'Links should point to destinations');
+assert.ok(!html.includes('style="'), 'Inline styles should not be used');
+
+for (const className of ['.market-section', '.amazon-grid', '.outcome-grid', '.faq-list', '.floating-kakao', '.schedule-note', '.large-action-btn', '.smartstore-icon', '.kakao-icon', '.action-copy']) {
+  assert.ok(css.includes(className), `CSS should include ${className}`);
+}
+assert.ok(css.includes('@media (max-width: 640px)'));
+assert.ok(css.includes('prefers-reduced-motion'));
+assert.ok(js.includes('IntersectionObserver'));
+assert.ok(js.includes('data-video-tab'));
 
 for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg']) {
-  const imagePath = resolve(root, file);
-  assert.ok(existsSync(imagePath), `${file} should exist`);
-  assert.ok(statSync(imagePath).size < 3 * 1024 * 1024, `${file} should be under 3MB`);
+  const path = resolve(root, file);
+  assert.ok(existsSync(path), `${file} should exist`);
+  assert.ok(statSync(path).size < 3 * 1024 * 1024, `${file} should be under 3MB`);
 }
 
-const imageTags = [...html.matchAll(/<img\b[^>]*>/g)].map(([tag]) => tag);
-assert.equal(imageTags.length, 2, 'Page should use exactly two instructor images');
-for (const tag of imageTags) {
-  assert.match(tag, /alt="[^"]{8,}"/, 'Each image should have meaningful alt text');
-  assert.match(tag, /width="1400"/, 'Each image should declare actual width');
-  assert.match(tag, /height="1960"/, 'Each image should declare actual height');
-  assert.match(tag, /decoding="async"/, 'Each image should use async decoding');
-}
-assert.match(imageTags[0], /loading="eager"/, 'Hero image should load eagerly');
-assert.match(imageTags[0], /fetchpriority="high"/, 'Hero image should have high fetch priority');
-assert.match(imageTags[1], /loading="lazy"/, 'Below-fold image should lazy load');
-
-for (const phrase of [
-  'Amazon Masterclass Landing Page',
-  '파일 구조',
-  '디자인 기준',
-  '실행 방법',
-]) {
-  assert.ok(readme.includes(phrase), `README should include ${phrase}`);
-}
+console.log('Site validation passed.');

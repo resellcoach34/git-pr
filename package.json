@@ -1,0 +1,11 @@
+{
+  "name": "resellcoach-class",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Resellcoach Amazon offline class landing page.",
+  "scripts": {
+    "dev": "node server.cjs",
+    "start": "node server.cjs",
+    "test": "node tests/validate-site.mjs"
+  }
+}
