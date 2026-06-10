@@ -905,14 +905,14 @@ footer {
 .market-hook {
     align-items: center;
     color: #ffffff;
-    display: inline-flex;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
     font-size: clamp(1.55rem, 3.2vw, 2.55rem);
     font-weight: 900;
-    gap: 0.8rem;
+    gap: 1rem;
     justify-content: center;
     line-height: 1.28;
-    margin-bottom: 1.35rem;
+    margin-bottom: 1.55rem;
 }
 
 .coupang-logo {
@@ -927,6 +927,15 @@ footer {
     letter-spacing: 0;
     line-height: 1;
     padding: 0.48rem 0.72rem;
+}
+
+.hook-question {
+    color: #ffffff;
+    display: block;
+    font-size: clamp(2.5rem, 6.6vw, 6.2rem);
+    font-weight: 900;
+    line-height: 1.08;
+    max-width: 980px;
 }
 
 .coupang-logo span:nth-child(1),
@@ -952,8 +961,9 @@ footer {
 }
 
 .market-section .section-header h2 {
-    font-size: clamp(2.25rem, 5vw, 4.25rem);
+    font-size: clamp(2.25rem, 4.6vw, 4rem);
     line-height: 1.18;
+    margin-top: 0.9rem;
 }
 
 .market-section .accent-blue {
@@ -1320,6 +1330,89 @@ footer {
     padding-left: 0.8rem;
 }
 
+.sales-proof {
+    background: #ffffff;
+    color: var(--color-ink);
+    grid-column: 1 / -1;
+    margin-top: 0.8rem;
+    padding: clamp(1.35rem, 3vw, 2rem);
+}
+
+.sales-proof-header {
+    align-items: end;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1.3rem;
+}
+
+.sales-proof-header .eyebrow {
+    margin-bottom: 0.35rem;
+}
+
+.sales-proof-header h3 {
+    color: #111827;
+    font-size: clamp(1.6rem, 3.5vw, 2.55rem);
+    font-weight: 900;
+    line-height: 1.18;
+}
+
+.sales-proof-grid {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sales-proof-card {
+    border: 1px solid rgba(39, 59, 152, 0.16);
+    box-shadow: 0 16px 36px rgba(31, 47, 128, 0.13);
+    display: grid;
+    gap: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.sales-proof-card div {
+    background: #10172c;
+    color: #ffffff;
+    display: grid;
+    gap: 0.35rem;
+    padding: 1rem;
+}
+
+.sales-proof-card span {
+    color: #b9c8ff;
+    font-size: 0.96rem;
+    font-weight: 900;
+}
+
+.sales-proof-card strong {
+    color: #ffd95a;
+    font-size: clamp(1.65rem, 4vw, 2.55rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.sales-proof-card em {
+    color: #ffffff;
+    font-size: clamp(1.45rem, 3.3vw, 2.25rem);
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.sales-proof-card small {
+    color: #b9c8ff;
+    font-size: 0.86rem;
+    font-weight: 800;
+}
+
+.sales-proof-card img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
 .faq-container {
     max-width: 900px;
 }
@@ -1524,6 +1617,7 @@ footer {
     .testimonial-layout,
     .curriculum-grid,
     .insight-list,
+    .sales-proof-grid,
     .amazon-grid,
     .outcome-grid {
         grid-template-columns: 1fr;
@@ -1574,12 +1668,21 @@ footer {
         font-size: 2.8rem;
     }
 
+    .hook-question {
+        font-size: clamp(2.45rem, 13vw, 4.2rem);
+    }
+
     .amazon-section .section-header h2 {
         font-size: clamp(3.2rem, 18vw, 4.8rem);
     }
 
     .amazon-title-row {
         align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sales-proof-header {
+        align-items: start;
         flex-direction: column;
     }
 

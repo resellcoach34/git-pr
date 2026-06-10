@@ -18,12 +18,18 @@ for (const id of ['hero', 'market-choice', 'why-amazon', 'instructor', 'video-pr
 
 for (const phrase of [
   '한국 상품의 다음 시장',
-  '아직도 쿠팡에서 판매하시나요?',
+  '아직도 쿠팡에서<br>판매하시나요?',
   '그래서 저는 블루오션 아마존에서 한국 상품을 팔고 있습니다.',
   '왜 아마존인가<span class="question-mark">?</span>',
   'amazon-wordmark',
   '환율은 오르고, 국내 온라인 경쟁은 더 치열해지고 있습니다',
   '직접 판매해본 사람이',
+  '가장 최근 매출',
+  '실제 아마존 매출을 확인해주세요',
+  'US$17,411.65',
+  '약 2,660만원',
+  'US$59,025.96',
+  '약 9,000만원',
   '혼자 다음 상품을 준비할 수 있도록',
   '수강 신청은 스마트스토어에서 바로 진행할 수 있습니다',
   'large-action-btn',
@@ -64,7 +70,7 @@ assert.ok(css.includes('prefers-reduced-motion'));
 assert.ok(js.includes('IntersectionObserver'));
 assert.ok(js.includes('data-video-tab'));
 
-for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg']) {
+for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-may-2026.png', 'sales-jan-may-2026.png']) {
   const path = resolve(root, file);
   assert.ok(existsSync(path), `${file} should exist`);
   assert.ok(statSync(path).size < 3 * 1024 * 1024, `${file} should be under 3MB`);
