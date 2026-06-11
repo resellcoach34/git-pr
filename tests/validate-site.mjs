@@ -17,7 +17,17 @@ for (const id of ['hero', 'market-choice', 'why-amazon', 'instructor', 'video-pr
 }
 
 for (const phrase of [
-  '한국 상품의 다음 시장',
+  '아마존 판매,<br>너무 어렵게 생각하지 마세요.',
+  '아마존 셀러<br>&quot;리셀이코치&quot;',
+  '88년생, ESTJ',
+  '홍삼업체 해외영업부 5년',
+  '유튜브 &quot;리셀이코치&quot; 채널 운영',
+  '국내 마켓 리셀로 3년 연속 10억 매출',
+  '아마존 셀러 3년차',
+  '한국에서 싸게 사서 미국에 마진 붙여서 판매하는 것입니다.',
+  '아마존 무료 강의 보러가기',
+  '리셀이코치에게 교육 받기',
+  '아마존 A-Z까지<br>같이 옆에서 알려드립니다',
   '아직도 쿠팡에서<br>판매하시나요?',
   '그래서 저는 블루오션 아마존에서 한국 상품을 팔고 있습니다.',
   '왜 아마존인가<span class="question-mark">?</span>',
@@ -50,25 +60,28 @@ const hero = html.slice(html.indexOf('<header'), html.indexOf('</header>'));
 assert.ok(!hero.includes('스마트스토어'), 'Hero should not expose payment');
 assert.ok(!hero.includes('카카오톡'), 'Hero should not expose Kakao inquiry');
 assert.ok(!hero.includes('가격'), 'Hero should not expose price');
+assert.ok(!hero.includes('처음 시작하는 사람도'), 'Hero should not include old checklist copy');
+assert.ok(!hero.includes('화면으로만 보지 않고'), 'Hero should not include old checklist copy');
+assert.ok(!hero.includes('비용과 계정 리스크'), 'Hero should not include old checklist copy');
+assert.ok(!hero.includes('판매 경험을 실행 과정으로 바꾼 강의'), 'Hero should not include old profile heading');
+assert.ok(!hero.includes('막연한 성공담'), 'Hero should not include old profile description');
 assert.ok(html.indexOf('id="application"') > html.indexOf('id="faq"'), 'Application should appear after FAQ');
 assert.ok(html.indexOf('스마트스토어에서 결제하기') > html.indexOf('id="application"'), 'Payment button should appear in the final application section');
 assert.ok(html.indexOf('https://smartstore.naver.com/benefitothers') > html.indexOf('id="application"'), 'Smartstore link should appear in the final application section');
 assert.ok(!html.includes('KAKAO_OPEN_CHAT_URL_PLACEHOLDER'), 'Kakao placeholder should be replaced');
 
-assert.equal([...html.matchAll(/data-video-tab=/g)].length, 3);
-assert.equal([...html.matchAll(/data-video-panel=/g)].length, 3);
+assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
 assert.equal([...html.matchAll(/youtube\.com\/embed/g)].length, 3);
 assert.equal([...html.matchAll(/<details/g)].length, 4);
 assert.ok(!html.includes('href="#"'), 'Links should point to destinations');
 assert.ok(!html.includes('style="'), 'Inline styles should not be used');
 
-for (const className of ['.market-section', '.amazon-grid', '.outcome-grid', '.faq-list', '.floating-kakao', '.schedule-note', '.large-action-btn', '.smartstore-icon', '.kakao-icon', '.action-copy']) {
+for (const className of ['.market-section', '.amazon-grid', '.outcome-grid', '.faq-list', '.floating-kakao', '.schedule-note', '.large-action-btn', '.smartstore-icon', '.kakao-icon', '.action-copy', '.hero-tab-btn', '.hero-bio-list']) {
   assert.ok(css.includes(className), `CSS should include ${className}`);
 }
 assert.ok(css.includes('@media (max-width: 640px)'));
 assert.ok(css.includes('prefers-reduced-motion'));
 assert.ok(js.includes('IntersectionObserver'));
-assert.ok(js.includes('data-video-tab'));
 
 for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-may-2026.png', 'sales-jan-may-2026.png']) {
   const path = resolve(root, file);
