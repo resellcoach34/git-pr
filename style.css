@@ -443,11 +443,53 @@ section {
     background: #000000;
 }
 
-.video-frame iframe {
-    border: 0;
+.video-preview {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-preview img {
     display: block;
     height: 100%;
+    object-fit: cover;
+    transition: transform 180ms ease;
     width: 100%;
+}
+
+.video-preview::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.28));
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.video-preview:hover img {
+    transform: scale(1.03);
+}
+
+.play-badge {
+    background: #ff1f1f;
+    border-radius: 999px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+    height: 4.5rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 4.5rem;
+    z-index: 1;
+}
+
+.play-badge::after {
+    border-bottom: 0.8rem solid transparent;
+    border-left: 1.15rem solid #ffffff;
+    border-top: 0.8rem solid transparent;
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-38%, -50%);
 }
 
 .video-copy {
@@ -472,6 +514,19 @@ section {
 
 .video-copy p {
     color: #4c5567;
+}
+
+.video-link {
+    color: var(--color-ink);
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-top: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.video-link:hover {
+    color: var(--color-action);
 }
 
 .split-container,

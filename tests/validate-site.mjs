@@ -71,7 +71,9 @@ assert.ok(html.indexOf('https://smartstore.naver.com/benefitothers') > html.inde
 assert.ok(!html.includes('KAKAO_OPEN_CHAT_URL_PLACEHOLDER'), 'Kakao placeholder should be replaced');
 
 assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
-assert.equal([...html.matchAll(/youtube\.com\/embed/g)].length, 3);
+assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);
+assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 3);
+assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
 assert.equal([...html.matchAll(/<details/g)].length, 4);
 assert.ok(!html.includes('href="#"'), 'Links should point to destinations');
 assert.ok(!html.includes('style="'), 'Inline styles should not be used');
