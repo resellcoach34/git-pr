@@ -1,0 +1,5 @@
+.agents/
+.superpowers/
+outputs/
+server.err.log
+server.out.log
