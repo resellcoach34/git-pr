@@ -36,8 +36,8 @@ for (const phrase of [
   '직접 판매해본 사람이',
   '가장 최근 매출',
   '실제 아마존 매출을 확인해주세요',
-  'US$17,411.65',
-  '약 2,660만원',
+  'US$23,736.50',
+  '약 3,590만원',
   'US$59,025.96',
   '약 9,000만원',
   '혼자 다음 상품을 준비할 수 있도록',
@@ -85,7 +85,7 @@ assert.ok(css.includes('@media (max-width: 640px)'));
 assert.ok(css.includes('prefers-reduced-motion'));
 assert.ok(js.includes('IntersectionObserver'));
 
-for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-may-2026.png', 'sales-jan-may-2026.png']) {
+for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-june-2026.png', 'sales-jan-may-2026.png']) {
   const path = resolve(root, file);
   assert.ok(existsSync(path), `${file} should exist`);
   assert.ok(statSync(path).size < 3 * 1024 * 1024, `${file} should be under 3MB`);
