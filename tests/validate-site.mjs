@@ -85,6 +85,12 @@ assert.ok(css.includes('@media (max-width: 640px)'));
 assert.ok(css.includes('prefers-reduced-motion'));
 assert.ok(js.includes('IntersectionObserver'));
 
+const mobileAmazonHeadingStart = css.lastIndexOf('.amazon-section .section-header h2');
+const mobileAmazonHeadingEnd = css.indexOf('.amazon-title-row', mobileAmazonHeadingStart);
+const mobileAmazonHeading = css.slice(mobileAmazonHeadingStart, mobileAmazonHeadingEnd);
+assert.ok(mobileAmazonHeading.includes('font-size: clamp(2.3rem, 11vw, 3rem)'), 'Mobile Amazon heading should fit on one line');
+assert.ok(mobileAmazonHeading.includes('white-space: nowrap'), 'Mobile Amazon heading should not wrap');
+
 for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-june-2026.png', 'sales-jan-may-2026.png']) {
   const path = resolve(root, file);
   assert.ok(existsSync(path), `${file} should exist`);

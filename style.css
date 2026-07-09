@@ -1774,7 +1774,8 @@ footer {
     }
 
     .amazon-section .section-header h2 {
-        font-size: clamp(3.2rem, 18vw, 4.8rem);
+        font-size: clamp(2.3rem, 11vw, 3rem);
+        white-space: nowrap;
     }
 
     .amazon-title-row {
