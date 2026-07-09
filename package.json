@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "node server.cjs",
     "start": "node server.cjs",
-    "test": "node tests/validate-site.mjs"
+    "test": "node tests/validate-site.mjs && node tests/validate-harness.mjs",
+    "test:site": "node tests/validate-site.mjs",
+    "test:harness": "node tests/validate-harness.mjs"
   }
 }

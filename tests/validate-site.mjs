@@ -10,7 +10,7 @@ const js = read('script.js');
 const packageJson = JSON.parse(read('package.json'));
 
 assert.equal(packageJson.scripts.dev, 'node server.cjs');
-assert.equal(packageJson.scripts.test, 'node tests/validate-site.mjs');
+assert.equal(packageJson.scripts.test, 'node tests/validate-site.mjs && node tests/validate-harness.mjs');
 
 for (const id of ['hero', 'market-choice', 'why-amazon', 'instructor', 'video-proof', 'outcomes', 'curriculum', 'testimonials', 'faq', 'application']) {
   assert.ok(html.includes(`id="${id}"`), `Page should include #${id}`);
