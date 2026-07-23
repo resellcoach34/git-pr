@@ -1700,6 +1700,13 @@ footer {
     white-space: nowrap;
 }
 
+.floating-kakao-copy .floating-kakao-code {
+    color: #5b4700;
+    font-size: 0.9rem;
+    font-weight: 900;
+    margin-top: 0.15rem;
+}
+
 .fade-in-up,
 .fade-in-left {
     opacity: 1;

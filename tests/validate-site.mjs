@@ -48,10 +48,11 @@ for (const phrase of [
   '수강 신청 바로가기',
   'kakao-icon',
   '카톡으로 질문하기',
-  '참여링크 : leecoach',
+  '참여 코드 : leecoach',
   'https://open.kakao.com/o/gh3ZQyki',
   '정확한 강의 날짜와 준비물은 결제 후 또는 카카오톡 상담에서 안내드립니다.',
   'floating-kakao',
+  '<span class="floating-kakao-code">참여코드 : leecoach</span>',
 ]) {
   assert.ok(html.includes(phrase), `HTML should include ${phrase}`);
 }
@@ -88,6 +89,7 @@ assert.ok(css.includes('.testimonials-section .section-header .eyebrow'), 'Testi
 assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'), 'Testimonials eyebrow should be slightly larger than the main heading');
 assert.ok(css.includes('color: #ff3b24'), 'Testimonials eyebrow should be red');
 assert.ok(css.includes('.testimonial-period'), 'Testimonials cohort note should have a dedicated style');
+assert.ok(css.includes('.floating-kakao-copy .floating-kakao-code'), 'Floating Kakao participation code should have a readable dedicated style');
 
 assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
 assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);
