@@ -17,7 +17,7 @@ for (const id of ['hero', 'market-choice', 'why-amazon', 'instructor', 'video-pr
 }
 
 for (const phrase of [
-  '아마존 판매,<br>너무 어렵게 생각하지 마세요.',
+  '여러분 월급으로 만족하시나요?<br>이제 부업으로 아마존에서 달러 버실 때 입니다!',
   '아마존 셀러<br>&quot;리셀이코치&quot;',
   '88년생, ESTJ',
   '홍삼업체 해외영업부 5년',
