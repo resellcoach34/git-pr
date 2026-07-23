@@ -123,8 +123,9 @@ assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'),
 assert.ok(css.includes('.faq-list summary'), 'FAQ questions should have a dedicated style');
 assert.ok(css.includes('font-size: clamp(1.55rem, 2.6vw, 2rem)'), 'FAQ questions should be enlarged again for readability');
 assert.ok(css.includes('font-size: clamp(1.25rem, 1.8vw, 1.4rem)'), 'FAQ answers should be clearly readable on mobile and desktop');
-assert.ok(css.includes('font-size: clamp(2rem, 3.4vw, 3.15rem)'), 'Navbar logo should be roughly three times larger');
-assert.ok(css.includes('font-size: clamp(1.5rem, 3vw, 2.82rem)'), 'Navbar links should be roughly three times larger');
+assert.ok(css.includes('font-size: clamp(1.1rem, 1.7vw, 1.6rem)'), 'Navbar logo should be reduced to roughly half its enlarged size');
+assert.ok(css.includes('font-size: clamp(0.9rem, 1.5vw, 1.42rem)'), 'Navbar links should be reduced to roughly half their enlarged size');
+assert.ok(css.includes('--nav-height: clamp(68px, 5vw, 82px)'), 'Navbar height should shrink with the reduced typography');
 assert.ok(css.includes('width: min(1600px, calc(100% - 40px))'), 'Enlarged desktop navigation should have enough horizontal room');
 assert.ok(css.includes('@media (hover: hover) and (pointer: fine)'), 'Depth hover effects should only run on precise hover devices');
 assert.ok(css.includes('translateY(-8px) scale(1.018)'), 'Image cards should lift forward with subtle depth');

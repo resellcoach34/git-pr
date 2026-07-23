@@ -15,7 +15,7 @@
     --radius-card: 8px;
     --radius-button: 999px;
     --space-section: 92px;
-    --nav-height: clamp(96px, 8vw, 124px);
+    --nav-height: clamp(68px, 5vw, 82px);
     --shadow-elevated: 0 22px 60px rgba(31, 47, 128, 0.28);
     --transition-standard: 180ms ease;
 }
@@ -87,7 +87,7 @@ ol {
 
 .logo {
     flex: 0 0 auto;
-    font-size: clamp(2rem, 3.4vw, 3.15rem);
+    font-size: clamp(1.1rem, 1.7vw, 1.6rem);
     font-weight: 900;
     line-height: 1;
 }
@@ -100,7 +100,7 @@ ol {
     align-items: center;
     color: #eef2ff;
     display: flex;
-    font-size: clamp(1.5rem, 3vw, 2.82rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.42rem);
     font-weight: 800;
     gap: clamp(0.55rem, 1vw, 1rem);
 }
@@ -1933,11 +1933,11 @@ footer {
     }
 
     .logo {
-        font-size: 1.85rem;
+        font-size: 1.25rem;
     }
 
     .nav-links {
-        font-size: 1.15rem;
+        font-size: 0.9rem;
         gap: 0.7rem;
         overflow-x: auto;
         padding-bottom: 0.15rem;
@@ -1949,7 +1949,7 @@ footer {
     }
 
     .hero-section {
-        padding-top: 150px;
+        padding-top: 118px;
     }
 
     .hero-content h1 {
