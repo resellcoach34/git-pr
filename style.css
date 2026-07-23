@@ -400,6 +400,14 @@ section {
     color: #4e5870;
 }
 
+.curriculum-section .section-header .eyebrow {
+    color: #e53220;
+    font-size: clamp(2.775rem, calc(5vw + 10px), 4.875rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+}
+
 .reason-grid {
     display: grid;
     gap: 1.2rem;

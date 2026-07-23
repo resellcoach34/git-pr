@@ -137,6 +137,9 @@ assert.ok(css.includes('font-size: 1.31rem'), 'Curriculum item details should be
 assert.ok(css.includes('--week-color:'), 'Curriculum cards should use distinct weekly accent colors');
 assert.ok(css.includes('background: var(--week-soft)'), 'Curriculum items should use tinted backgrounds');
 assert.ok(css.includes('border-left: 5px solid var(--week-color)'), 'Curriculum items should use stronger visual grouping');
+assert.ok(css.includes('.curriculum-section .section-header .eyebrow'), 'Curriculum eyebrow should have a section-specific style');
+assert.ok(css.includes('font-size: clamp(2.775rem, calc(5vw + 10px), 4.875rem)'), 'Curriculum eyebrow should stay 10px larger than the section title');
+assert.ok(css.includes('color: #e53220'), 'Curriculum eyebrow should be red');
 assert.equal([...html.matchAll(/<details/g)].length, 4);
 assert.ok(!html.includes('href="#"'), 'Links should point to destinations');
 assert.ok(!html.includes('style="'), 'Inline styles should not be used');
