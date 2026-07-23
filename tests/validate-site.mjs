@@ -12,7 +12,7 @@ const packageJson = JSON.parse(read('package.json'));
 assert.equal(packageJson.scripts.dev, 'node server.cjs');
 assert.equal(packageJson.scripts.test, 'node tests/validate-site.mjs && node tests/validate-harness.mjs');
 
-for (const id of ['hero', 'market-choice', 'why-amazon', 'instructor', 'video-proof', 'outcomes', 'curriculum', 'testimonials', 'faq', 'application']) {
+for (const id of ['hero', 'market-choice', 'why-amazon', 'instructor', 'video-proof', 'outcomes', 'curriculum', 'premium-benefits', 'testimonials', 'faq', 'application']) {
   assert.ok(html.includes(`id="${id}"`), `Page should include #${id}`);
 }
 
@@ -157,6 +157,14 @@ for (const phrase of [
 }
 assert.equal([...html.matchAll(/class="curriculum-card/g)].length, 4, 'Curriculum should include four weekly cards');
 assert.ok(css.includes('.curriculum-item-detail'), 'Curriculum should style item descriptions');
+assert.ok(html.indexOf('id="premium-benefits"') > html.indexOf('id="curriculum"'), 'Premium benefit images should appear directly after the curriculum');
+assert.equal([...html.matchAll(/class="benefit-image-card/g)].length, 4, 'Premium benefits should include all four supplied images');
+for (const file of ['premium-benefit-overview.jpg', 'premium-benefit-onboarding.jpg', 'premium-benefit-coaching.jpg', 'premium-benefit-payback.jpg']) {
+  assert.ok(html.includes(`src="${file}"`), `Premium benefits should include ${file}`);
+  assert.ok(existsSync(resolve(root, file)), `${file} should exist`);
+}
+assert.ok(css.includes('.benefit-image-grid'), 'Premium benefits should use a dedicated responsive grid');
+assert.ok(css.includes('grid-template-columns: repeat(2, minmax(0, 1fr))'), 'Premium benefits should use a readable two-column desktop layout');
 assert.ok(css.includes('width: min(100% - 40px, 1360px)'), 'Curriculum should use a wider desktop container');
 assert.ok(css.includes('grid-template-columns: repeat(2, minmax(0, 1fr))'), 'Curriculum items should spread across two columns on wide screens');
 assert.ok(css.includes('font-size: clamp(1.95rem, 2.5vw, 2.3rem)'), 'Curriculum headings should be about 5px larger');
