@@ -92,8 +92,11 @@ assert.ok(css.includes('color: #ff3b24'), 'Testimonials eyebrow should be red');
 assert.ok(css.includes('.testimonial-period'), 'Testimonials cohort note should have a dedicated style');
 assert.ok(css.includes('.floating-kakao-copy .floating-kakao-code'), 'Floating Kakao participation code should have a readable dedicated style');
 assert.ok(css.includes('.application-container .eyebrow'), 'Application eyebrow should have a section-specific style');
-assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'), 'Application eyebrow should be slightly larger than the application heading');
+assert.ok(css.includes('font-size: clamp(2rem, 8.8vw, 4.625rem)'), 'Application eyebrow should fit on one line at mobile width while staying prominent');
 assert.ok(css.includes('color: #ff3b24'), 'Application eyebrow should be red');
+assert.ok(css.includes('white-space: nowrap'), 'Application eyebrow should stay on one line');
+assert.ok(!html.includes('결제를 먼저 진행하고 싶은 분은 스마트스토어 버튼을 눌러 신청할 수 있습니다.'), 'Application description should be removed without leaving placeholder copy');
+assert.ok(css.includes('.application-container h2 + .commerce-actions'), 'Application buttons should follow the heading without the removed paragraph gap');
 
 assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
 assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);
