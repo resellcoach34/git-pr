@@ -71,7 +71,8 @@ assert.ok(!html.includes('https://smartstore.naver.com/benefitothers'), 'Old Sma
 assert.ok(!html.includes('KAKAO_OPEN_CHAT_URL_PLACEHOLDER'), 'Kakao placeholder should be replaced');
 assert.ok(html.includes('class="application-pricing-card"'), 'Application section should include the pricing image card');
 assert.ok(html.includes('src="course-fee-schedule.jpg"'), 'Application section should use the supplied pricing image');
-assert.ok(html.includes('alt="온라인반과 서울 오프라인반 강의 일정 및 얼리버드 수강료 안내"'), 'Pricing image should have descriptive alt text');
+assert.equal(statSync(resolve(root, 'course-fee-schedule.jpg')).size, 382774, 'Application pricing image should use the newly supplied August schedule banner');
+assert.ok(html.includes('alt="8월 온라인반과 서울 오프라인반 강의 일정 및 얼리버드 수강료 안내"'), 'Application pricing image alt text should describe the updated August schedule');
 assert.ok(!html.includes('일정 확정 후 안내되는 내용'), 'Old application guide should be removed');
 assert.ok(!html.includes('강의 날짜와 진행 시간'), 'Old application guide items should be removed');
 assert.ok(html.includes('<p class="eyebrow">수강생 후기</p>'), 'Testimonials should use the requested eyebrow copy');
