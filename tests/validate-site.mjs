@@ -76,6 +76,7 @@ assert.ok(!html.includes('일정 확정 후 안내되는 내용'), 'Old applicat
 assert.ok(!html.includes('강의 날짜와 진행 시간'), 'Old application guide items should be removed');
 assert.ok(html.includes('<p class="eyebrow">수강생 후기</p>'), 'Testimonials should use the requested eyebrow copy');
 assert.ok(html.includes('<h2>처음 시작한 수강생분들의 생생한 후기</h2>'), 'Testimonials should use the requested heading');
+assert.ok(html.includes('<p class="testimonial-period">(2026년 7월 수강생분들)</p>'), 'Testimonials should include the requested July 2026 cohort note');
 assert.equal([...html.matchAll(/class="testimonial-proof/g)].length, 4, 'Testimonials should include four proof images');
 for (const file of ['testimonial-01.png', 'testimonial-02.png', 'testimonial-03.png', 'testimonial-04.png']) {
   assert.ok(html.includes(`src="${file}"`), `Testimonials should include ${file}`);
@@ -83,6 +84,10 @@ for (const file of ['testimonial-01.png', 'testimonial-02.png', 'testimonial-03.
 assert.ok(!html.includes('class="testimonial-card'), 'Old testimonial cards should be removed');
 assert.ok(css.includes('.testimonial-gallery'), 'Testimonials should use the proof image gallery');
 assert.ok(css.includes('width: min(100% - 40px, 1200px)'), 'Testimonial images should use a wide readable layout');
+assert.ok(css.includes('.testimonials-section .section-header .eyebrow'), 'Testimonials eyebrow should have a section-specific style');
+assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'), 'Testimonials eyebrow should be slightly larger than the main heading');
+assert.ok(css.includes('color: #ff3b24'), 'Testimonials eyebrow should be red');
+assert.ok(css.includes('.testimonial-period'), 'Testimonials cohort note should have a dedicated style');
 
 assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
 assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);

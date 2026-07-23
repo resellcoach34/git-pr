@@ -662,6 +662,21 @@ section {
     width: min(100% - 40px, 1200px);
 }
 
+.testimonials-section .section-header .eyebrow {
+    color: #ff3b24;
+    font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+}
+
+.testimonials-section .section-header .testimonial-period {
+    color: #cbd5ff;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 800;
+    margin-top: 0.5rem;
+}
+
 .testimonial-gallery {
     display: grid;
     gap: 2.25rem;
