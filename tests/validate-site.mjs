@@ -85,6 +85,50 @@ for (const phrase of [
 }
 assert.ok(css.includes('font-size: clamp(1.7rem, 3.2vw, 2.5rem)'), 'Video titles should use the larger responsive font size');
 assert.ok(css.includes('font-size: clamp(1.05rem, 1.5vw, 1.2rem)'), 'Video descriptions should use the larger responsive font size');
+
+for (const phrase of [
+  '아마존 글로벌 셀러 입문',
+  '아마존 필수 서류 안내',
+  '반려 없는 입점',
+  '[실습] 아마존 가입하기',
+  '초보자 맞춤 셀러 계정 실전 생성',
+  '성공 마인드셋',
+  '확실한 수익 비전과 동기 부여',
+  '[추가] 정산 계좌 세팅',
+  '핑퐁 페이먼트 계좌 연동',
+  '1주차 밀착 Q&amp;A',
+  '마이너스 NO! 마진 극대',
+  '상표권(USPTO) 방어',
+  '셀유어즈 실전 기법',
+  '[실습] 절대 마진 계산',
+  '카테고리 승인',
+  '[특전] 황금 소싱 리스트',
+  '2주차 밀착 Q&amp;A',
+  '[실습] 다이소 온라인 소싱',
+  '[실습] 오프라인 다이소 투어',
+  '영어 몰라도 OK! AI',
+  '뉴리스팅 필수 이론',
+  'AI 자동화 전략',
+  'AI 상세페이지 제작',
+  'AI 이미지 편집',
+  '[실습] 내 상품 리스팅',
+  '[실습] 라벨 바코드',
+  '[시크릿] 실제 리스팅 공개',
+  '정글스카우트 심화',
+  '3주차 밀착 Q&amp;A',
+  '배송(Door-to-Door) 마스터 &amp;',
+  '무역 기초 프로세스',
+  '[실습] 아마존 배송 플랜',
+  '[실습] 운송사 배송 만들기',
+  '[마케팅] 상위 노출 꼼수',
+  '정부 지원금 지원',
+  '[특전] 핵심 체크리스트',
+  '최종 Q&amp;A',
+]) {
+  assert.ok(html.includes(phrase), `Curriculum should include ${phrase}`);
+}
+assert.equal([...html.matchAll(/class="curriculum-card/g)].length, 4, 'Curriculum should include four weekly cards');
+assert.ok(css.includes('.curriculum-item-detail'), 'Curriculum should style item descriptions');
 assert.equal([...html.matchAll(/<details/g)].length, 4);
 assert.ok(!html.includes('href="#"'), 'Links should point to destinations');
 assert.ok(!html.includes('style="'), 'Inline styles should not be used');
