@@ -726,32 +726,50 @@ section {
 }
 
 .curriculum-card {
+    --week-color: #526fff;
+    --week-soft: #eef2ff;
     background: #ffffff;
+    border-top: 8px solid var(--week-color);
     box-shadow: 0 15px 35px rgba(50, 65, 130, 0.16);
     padding: 2.5rem 2.25rem 2.25rem;
     position: relative;
 }
 
+.curriculum-card:nth-child(2) {
+    --week-color: #7653d6;
+    --week-soft: #f3efff;
+}
+
+.curriculum-card:nth-child(3) {
+    --week-color: #07877f;
+    --week-soft: #eaf8f6;
+}
+
+.curriculum-card:nth-child(4) {
+    --week-color: #f05a34;
+    --week-soft: #fff0ea;
+}
+
 .curriculum-card span {
-    background: var(--color-blue);
+    background: var(--week-color);
     border-radius: var(--radius-button);
     color: #ffffff;
     display: inline-flex;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 900;
     left: 50%;
-    min-width: 110px;
-    padding: 0.18rem 1rem;
+    min-width: 124px;
+    padding: 0.2rem 1.15rem;
     position: absolute;
-    top: -18px;
+    top: -24px;
     transform: translateX(-50%);
     justify-content: center;
 }
 
 .curriculum-card h3 {
-    border-bottom: 2px solid #d9dbe3;
+    border-bottom: 3px solid var(--week-color);
     color: #191919;
-    font-size: clamp(1.65rem, 2.2vw, 2rem);
+    font-size: clamp(1.95rem, 2.5vw, 2.3rem);
     line-height: 1.3;
     margin-bottom: 1.3rem;
     padding-bottom: 1rem;
@@ -764,9 +782,17 @@ section {
 }
 
 .curriculum-card li {
-    color: #263a91;
-    font-size: 1.12rem;
-    line-height: 1.45;
+    background: var(--week-soft);
+    border-left: 5px solid var(--week-color);
+    border-radius: 8px;
+    color: #1f2b58;
+    font-size: 1.43rem;
+    line-height: 1.4;
+    padding: 0.9rem 1rem;
+}
+
+.curriculum-card li::before {
+    content: '';
 }
 
 .curriculum-card li strong {
@@ -775,16 +801,16 @@ section {
 }
 
 .curriculum-item-detail {
-    color: #596273;
+    color: #414c61;
     display: block;
-    font-size: 1rem;
+    font-size: 1.31rem;
     font-weight: 600;
-    line-height: 1.5;
-    margin-top: 0.2rem;
+    line-height: 1.45;
+    margin-top: 0.3rem;
 }
 
 .support-card span {
-    background: var(--color-action);
+    background: var(--week-color);
 }
 
 .support-card h3 {
@@ -1853,11 +1879,11 @@ footer {
     }
 
     .curriculum-card li {
-        font-size: 1.05rem;
+        font-size: 1.35rem;
     }
 
     .curriculum-item-detail {
-        font-size: 0.96rem;
+        font-size: 1.25rem;
     }
 
     .hero-container {
