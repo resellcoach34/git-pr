@@ -1796,6 +1796,10 @@ footer {
         width: 100%;
     }
 
+    .video-copy h3 {
+        font-size: 1.55rem;
+    }
+
     .video-panel {
         grid-template-columns: 1fr;
     }

@@ -102,6 +102,11 @@ const mobileAmazonHeading = css.slice(mobileAmazonHeadingStart, mobileAmazonHead
 assert.ok(mobileAmazonHeading.includes('font-size: clamp(2.3rem, 11vw, 3rem)'), 'Mobile Amazon heading should fit on one line');
 assert.ok(mobileAmazonHeading.includes('white-space: nowrap'), 'Mobile Amazon heading should not wrap');
 
+const mobileVideoTitleStart = css.lastIndexOf('.video-copy h3');
+const mobileVideoTitleEnd = css.indexOf('.video-panel', mobileVideoTitleStart);
+const mobileVideoTitle = css.slice(mobileVideoTitleStart, mobileVideoTitleEnd);
+assert.ok(mobileVideoTitle.includes('font-size: 1.55rem'), 'Mobile video titles should keep Video 01 copy on two lines');
+
 for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-june-2026.png', 'sales-jan-may-2026.png']) {
   const path = resolve(root, file);
   assert.ok(existsSync(path), `${file} should exist`);
