@@ -74,6 +74,17 @@ assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
 assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);
 assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 3);
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
+for (const phrase of [
+  '아마존에서 물건 판매하는 기초 영상',
+  '(아마존으로 한달에 150만원 버는 법)',
+  '아마존 판매하는 방법 무료 강의',
+  '(리셀이코치 방법을 배워보세요!)',
+  '아마존 수강생분들의 생생한 후기 영상',
+]) {
+  assert.ok(html.includes(phrase), `Video cards should include ${phrase}`);
+}
+assert.ok(css.includes('font-size: clamp(1.7rem, 3.2vw, 2.5rem)'), 'Video titles should use the larger responsive font size');
+assert.ok(css.includes('font-size: clamp(1.05rem, 1.5vw, 1.2rem)'), 'Video descriptions should use the larger responsive font size');
 assert.equal([...html.matchAll(/<details/g)].length, 4);
 assert.ok(!html.includes('href="#"'), 'Links should point to destinations');
 assert.ok(!html.includes('style="'), 'Inline styles should not be used');

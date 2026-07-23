@@ -501,24 +501,26 @@ section {
 .video-copy span {
     color: var(--color-action);
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 900;
     margin-bottom: 0.35rem;
 }
 
 .video-copy h3 {
-    font-size: clamp(1.45rem, 3vw, 2.2rem);
+    font-size: clamp(1.7rem, 3.2vw, 2.5rem);
     line-height: 1.2;
     margin-bottom: 0.55rem;
 }
 
 .video-copy p {
     color: #4c5567;
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.65;
 }
 
 .video-link {
     color: var(--color-ink);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     font-weight: 800;
     margin-top: 1rem;
     text-decoration: underline;
