@@ -120,7 +120,8 @@ for (const phrase of [
 assert.ok(css.includes('.faq-section .section-header .eyebrow'), 'FAQ eyebrow should have a dedicated prominent style');
 assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'), 'FAQ eyebrow should be larger than the FAQ heading');
 assert.ok(css.includes('.faq-list summary'), 'FAQ questions should have a dedicated style');
-assert.ok(css.includes('font-size: clamp(1.35rem, 2.2vw, 1.75rem)'), 'FAQ questions should be larger and easier to read');
+assert.ok(css.includes('font-size: clamp(1.55rem, 2.6vw, 2rem)'), 'FAQ questions should be enlarged again for readability');
+assert.ok(css.includes('font-size: clamp(1.25rem, 1.8vw, 1.4rem)'), 'FAQ answers should be clearly readable on mobile and desktop');
 assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 2);
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
 for (const phrase of [
