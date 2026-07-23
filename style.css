@@ -1694,8 +1694,7 @@ footer {
     padding-top: 0.85rem;
 }
 
-.kakao-btn,
-.floating-kakao {
+.kakao-btn {
     background: #fee500;
     color: #171717;
 }
@@ -1767,56 +1766,6 @@ footer {
 
 .kakao-copy em {
     color: #4c3c00;
-}
-
-.floating-kakao {
-    align-items: center;
-    border-radius: var(--radius-button);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    display: inline-flex;
-    gap: 0.95rem;
-    line-height: 1.25;
-    min-height: 88px;
-    padding: 1.08rem 1.6rem 1.08rem 1.08rem;
-    position: fixed;
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform var(--transition-standard), box-shadow var(--transition-standard);
-    z-index: 30;
-}
-
-.floating-kakao:hover {
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.36);
-    transform: translateY(-50%) translateX(-4px);
-}
-
-.floating-kakao-icon {
-    height: 58px;
-    width: 58px;
-}
-
-.floating-kakao-copy {
-    display: grid;
-    gap: 0.05rem;
-    min-width: 0;
-}
-
-.floating-kakao strong {
-    font-size: 1.38rem;
-}
-
-.floating-kakao-copy span {
-    font-size: 0.98rem;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.floating-kakao-copy .floating-kakao-code {
-    color: #5b4700;
-    font-size: 0.9rem;
-    font-weight: 900;
-    margin-top: 0.15rem;
 }
 
 .fade-in-up,
@@ -2085,25 +2034,4 @@ footer {
         min-height: auto;
     }
 
-    .floating-kakao {
-        gap: 0.62rem;
-        min-height: 66px;
-        padding: 0.82rem 1rem 0.82rem 0.82rem;
-        right: 10px;
-        top: 52%;
-    }
-
-    .floating-kakao-icon {
-        height: 46px;
-        width: 46px;
-    }
-
-    .floating-kakao-copy span {
-        display: none;
-    }
-
-    .floating-kakao strong {
-        font-size: 1.05rem;
-        white-space: nowrap;
-    }
 }

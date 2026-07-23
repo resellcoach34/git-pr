@@ -51,8 +51,6 @@ for (const phrase of [
   '참여 코드 : leecoach',
   'https://open.kakao.com/o/gh3ZQyki',
   '정확한 강의 날짜와 준비물은 결제 후 또는 카카오톡 상담에서 안내드립니다.',
-  'floating-kakao',
-  '<span class="floating-kakao-code">참여코드 : leecoach</span>',
 ]) {
   assert.ok(html.includes(phrase), `HTML should include ${phrase}`);
 }
@@ -90,7 +88,9 @@ assert.ok(css.includes('.testimonials-section .section-header .eyebrow'), 'Testi
 assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'), 'Testimonials eyebrow should be slightly larger than the main heading');
 assert.ok(css.includes('color: #ff3b24'), 'Testimonials eyebrow should be red');
 assert.ok(css.includes('.testimonial-period'), 'Testimonials cohort note should have a dedicated style');
-assert.ok(css.includes('.floating-kakao-copy .floating-kakao-code'), 'Floating Kakao participation code should have a readable dedicated style');
+assert.ok(!html.includes('class="floating-kakao"'), 'Floating Kakao button should be removed');
+assert.ok(!html.includes('언제든 편하게 물어보세요'), 'Floating Kakao helper copy should be removed');
+assert.ok(!css.includes('.floating-kakao {'), 'Floating Kakao positioning styles should be removed');
 assert.ok(css.includes('.application-container .eyebrow'), 'Application eyebrow should have a section-specific style');
 assert.ok(css.includes('font-size: clamp(2rem, 8.8vw, 4.625rem)'), 'Application eyebrow should fit on one line at mobile width while staying prominent');
 assert.ok(css.includes('color: #ff3b24'), 'Application eyebrow should be red');
@@ -212,7 +212,7 @@ assert.equal([...html.matchAll(/<details/g)].length, 4);
 assert.ok(!html.includes('href="#"'), 'Links should point to destinations');
 assert.ok(!html.includes('style="'), 'Inline styles should not be used');
 
-for (const className of ['.market-section', '.amazon-grid', '.outcome-grid', '.faq-list', '.floating-kakao', '.schedule-note', '.large-action-btn', '.smartstore-icon', '.kakao-icon', '.action-copy', '.hero-tab-btn', '.hero-bio-list']) {
+for (const className of ['.market-section', '.amazon-grid', '.outcome-grid', '.faq-list', '.schedule-note', '.large-action-btn', '.smartstore-icon', '.kakao-icon', '.action-copy', '.hero-tab-btn', '.hero-bio-list']) {
   assert.ok(css.includes(className), `CSS should include ${className}`);
 }
 assert.ok(css.includes('@media (max-width: 640px)'));
