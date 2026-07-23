@@ -652,6 +652,12 @@ section {
     background: var(--color-canvas-soft);
 }
 
+.application-section {
+    background:
+        radial-gradient(circle at 82% 28%, rgba(109, 133, 255, 0.26), transparent 34%),
+        linear-gradient(180deg, #11141f 0%, #171b2a 100%);
+}
+
 .testimonial-layout {
     display: grid;
     gap: 1.25rem;
@@ -919,35 +925,21 @@ section {
     text-align: center;
 }
 
-.application-guide,
-.application-form {
-    background: #ffffff;
-    border-radius: var(--radius-card);
-    color: #171717;
-    display: grid;
-    gap: 1rem;
-    padding: 1.5rem;
+.application-pricing-card {
+    background: linear-gradient(145deg, #86a1ff 0%, #5573e9 100%);
+    border: 2px solid rgba(180, 196, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 28px 70px rgba(51, 78, 190, 0.4);
+    line-height: 0;
+    overflow: hidden;
+    padding: 0.7rem;
 }
 
-.application-guide h3 {
-    font-size: 1.45rem;
-}
-
-.application-guide ul {
-    display: grid;
-    gap: 0.7rem;
-}
-
-.application-guide li {
-    border-left: 4px solid var(--color-action);
-    color: #303642;
-    font-weight: 900;
-    padding-left: 0.8rem;
-}
-
-.application-guide p {
-    color: #666f7f;
-    font-size: 0.95rem;
+.application-pricing-card img {
+    border-radius: 10px;
+    display: block;
+    height: auto;
+    width: 100%;
 }
 
 .commerce-actions {

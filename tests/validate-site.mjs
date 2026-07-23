@@ -69,6 +69,11 @@ assert.ok(html.indexOf('id="application"') > html.indexOf('id="faq"'), 'Applicat
 assert.ok(html.indexOf('스마트스토어에서 결제하기') > html.indexOf('id="application"'), 'Payment button should appear in the final application section');
 assert.ok(html.indexOf('https://smartstore.naver.com/benefitothers') > html.indexOf('id="application"'), 'Smartstore link should appear in the final application section');
 assert.ok(!html.includes('KAKAO_OPEN_CHAT_URL_PLACEHOLDER'), 'Kakao placeholder should be replaced');
+assert.ok(html.includes('class="application-pricing-card"'), 'Application section should include the pricing image card');
+assert.ok(html.includes('src="course-fee-schedule.jpg"'), 'Application section should use the supplied pricing image');
+assert.ok(html.includes('alt="온라인반과 서울 오프라인반 강의 일정 및 얼리버드 수강료 안내"'), 'Pricing image should have descriptive alt text');
+assert.ok(!html.includes('일정 확정 후 안내되는 내용'), 'Old application guide should be removed');
+assert.ok(!html.includes('강의 날짜와 진행 시간'), 'Old application guide items should be removed');
 
 assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
 assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);
@@ -162,7 +167,7 @@ const mobileVideoTitleEnd = css.indexOf('.video-panel', mobileVideoTitleStart);
 const mobileVideoTitle = css.slice(mobileVideoTitleStart, mobileVideoTitleEnd);
 assert.ok(mobileVideoTitle.includes('font-size: 1.55rem'), 'Mobile video titles should keep Video 01 copy on two lines');
 
-for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-june-2026.png', 'sales-jan-may-2026.png']) {
+for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-june-2026.png', 'sales-jan-may-2026.png', 'course-fee-schedule.jpg']) {
   const path = resolve(root, file);
   assert.ok(existsSync(path), `${file} should exist`);
   assert.ok(statSync(path).size < 3 * 1024 * 1024, `${file} should be under 3MB`);
