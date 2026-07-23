@@ -105,7 +105,8 @@ assert.ok(!html.includes('RAnbg3Kjm38'), 'The old third video link should be rem
 assert.ok(html.includes('class="review-channel-card'), 'The third video position should use the Naver review channel card');
 assert.ok(html.includes('src="resellcoach-naver-reviews.png"'), 'The supplied Naver review image should replace VIDEO 03');
 assert.ok(existsSync(resolve(root, 'resellcoach-naver-reviews.png')), 'The supplied Naver review image should exist');
-assert.ok(html.includes('실제 수강생분들의 따끈한 후기를 보고 싶으시면 네이버에 &quot;리셀이코치&quot; 채널로 오시면 보실 수 있습니다.'), 'The requested Naver review guidance should appear below the image');
+assert.ok(html.includes('실제 수강생분들의 따끈한 후기를 보고 싶으시면 네이버에<br>&quot;리셀이코치&quot; 카페로 오시면 보실 수 있습니다.'), 'The requested Naver cafe guidance should use the exact two-line layout');
+assert.ok(!html.includes('&quot;리셀이코치&quot; 채널로'), 'The old channel wording should be removed');
 assert.ok(css.includes('.review-channel-card'), 'The Naver review channel card should have a dedicated style');
 assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 2);
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
