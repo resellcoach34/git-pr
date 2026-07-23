@@ -68,7 +68,8 @@ assert.ok(!hero.includes('판매 경험을 실행 과정으로 바꾼 강의'), 
 assert.ok(!hero.includes('막연한 성공담'), 'Hero should not include old profile description');
 assert.ok(html.indexOf('id="application"') > html.indexOf('id="faq"'), 'Application should appear after FAQ');
 assert.ok(html.indexOf('스마트스토어에서 결제하기') > html.indexOf('id="application"'), 'Payment button should appear in the final application section');
-assert.ok(html.indexOf('https://smartstore.naver.com/benefitothers') > html.indexOf('id="application"'), 'Smartstore link should appear in the final application section');
+assert.ok(html.indexOf('https://mkt.shopping.naver.com/link/6a61be1bb030596f4780f805') > html.indexOf('id="application"'), 'Requested Naver Shopping payment link should appear in the final application section');
+assert.ok(!html.includes('https://smartstore.naver.com/benefitothers'), 'Old Smartstore payment link should be removed');
 assert.ok(!html.includes('KAKAO_OPEN_CHAT_URL_PLACEHOLDER'), 'Kakao placeholder should be replaced');
 assert.ok(html.includes('class="application-pricing-card"'), 'Application section should include the pricing image card');
 assert.ok(html.includes('src="course-fee-schedule.jpg"'), 'Application section should use the supplied pricing image');
