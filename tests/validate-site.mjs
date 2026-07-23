@@ -98,16 +98,22 @@ assert.ok(css.includes('white-space: nowrap'), 'Application eyebrow should stay 
 assert.ok(!html.includes('결제를 먼저 진행하고 싶은 분은 스마트스토어 버튼을 눌러 신청할 수 있습니다.'), 'Application description should be removed without leaving placeholder copy');
 assert.ok(css.includes('.application-container h2 + .commerce-actions'), 'Application buttons should follow the heading without the removed paragraph gap');
 
-assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
-assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);
-assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 3);
+assert.equal([...html.matchAll(/class="video-panel"/g)].length, 2, 'Only the first two YouTube video panels should remain');
+assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 2, 'Only the first two YouTube previews should remain');
+assert.ok(!html.includes('VIDEO 03'), 'The old third video card should be removed');
+assert.ok(!html.includes('RAnbg3Kjm38'), 'The old third video link should be removed');
+assert.ok(html.includes('class="review-channel-card'), 'The third video position should use the Naver review channel card');
+assert.ok(html.includes('src="resellcoach-naver-reviews.png"'), 'The supplied Naver review image should replace VIDEO 03');
+assert.ok(existsSync(resolve(root, 'resellcoach-naver-reviews.png')), 'The supplied Naver review image should exist');
+assert.ok(html.includes('실제 수강생분들의 따끈한 후기를 보고 싶으시면 네이버에 &quot;리셀이코치&quot; 채널로 오시면 보실 수 있습니다.'), 'The requested Naver review guidance should appear below the image');
+assert.ok(css.includes('.review-channel-card'), 'The Naver review channel card should have a dedicated style');
+assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 2);
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
 for (const phrase of [
   '아마존에서 물건 판매하는 기초 영상',
   '(아마존으로 한달에 150만원 버는 법)',
   '아마존 판매하는 방법 무료 강의',
   '(리셀이코치 방법을 배워보세요!)',
-  '아마존 수강생분들의 생생한 후기 영상',
 ]) {
   assert.ok(html.includes(phrase), `Video cards should include ${phrase}`);
 }

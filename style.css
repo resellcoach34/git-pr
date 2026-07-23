@@ -544,6 +544,31 @@ section {
     text-underline-offset: 0.2em;
 }
 
+.review-channel-card {
+    background: linear-gradient(145deg, rgba(109, 133, 255, 0.25), rgba(255, 59, 36, 0.14));
+    border: 1px solid rgba(153, 170, 255, 0.46);
+    border-radius: 20px;
+    box-shadow: 0 22px 52px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: clamp(0.55rem, 1.2vw, 0.85rem);
+}
+
+.review-channel-card img {
+    border-radius: 13px;
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.review-channel-card p {
+    color: #ffffff;
+    font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+    font-weight: 850;
+    line-height: 1.55;
+    padding: clamp(1.1rem, 2.5vw, 1.7rem) clamp(0.7rem, 2vw, 1.3rem) clamp(0.7rem, 1.5vw, 1rem);
+    text-align: center;
+}
+
 .video-link:hover {
     color: var(--color-action);
 }
