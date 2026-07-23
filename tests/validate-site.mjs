@@ -74,6 +74,15 @@ assert.ok(html.includes('src="course-fee-schedule.jpg"'), 'Application section s
 assert.ok(html.includes('alt="온라인반과 서울 오프라인반 강의 일정 및 얼리버드 수강료 안내"'), 'Pricing image should have descriptive alt text');
 assert.ok(!html.includes('일정 확정 후 안내되는 내용'), 'Old application guide should be removed');
 assert.ok(!html.includes('강의 날짜와 진행 시간'), 'Old application guide items should be removed');
+assert.ok(html.includes('<p class="eyebrow">수강생 후기</p>'), 'Testimonials should use the requested eyebrow copy');
+assert.ok(html.includes('<h2>처음 시작한 수강생분들의 생생한 후기</h2>'), 'Testimonials should use the requested heading');
+assert.equal([...html.matchAll(/class="testimonial-proof/g)].length, 4, 'Testimonials should include four proof images');
+for (const file of ['testimonial-01.png', 'testimonial-02.png', 'testimonial-03.png', 'testimonial-04.png']) {
+  assert.ok(html.includes(`src="${file}"`), `Testimonials should include ${file}`);
+}
+assert.ok(!html.includes('class="testimonial-card'), 'Old testimonial cards should be removed');
+assert.ok(css.includes('.testimonial-gallery'), 'Testimonials should use the proof image gallery');
+assert.ok(css.includes('width: min(100% - 40px, 1200px)'), 'Testimonial images should use a wide readable layout');
 
 assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
 assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);
@@ -167,7 +176,7 @@ const mobileVideoTitleEnd = css.indexOf('.video-panel', mobileVideoTitleStart);
 const mobileVideoTitle = css.slice(mobileVideoTitleStart, mobileVideoTitleEnd);
 assert.ok(mobileVideoTitle.includes('font-size: 1.55rem'), 'Mobile video titles should keep Video 01 copy on two lines');
 
-for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-june-2026.png', 'sales-jan-may-2026.png', 'course-fee-schedule.jpg']) {
+for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-june-2026.png', 'sales-jan-may-2026.png', 'course-fee-schedule.jpg', 'testimonial-01.png', 'testimonial-02.png', 'testimonial-03.png', 'testimonial-04.png']) {
   const path = resolve(root, file);
   assert.ok(existsSync(path), `${file} should exist`);
   assert.ok(statSync(path).size < 3 * 1024 * 1024, `${file} should be under 3MB`);
