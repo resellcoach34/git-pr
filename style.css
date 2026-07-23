@@ -1846,6 +1846,39 @@ footer {
     transition-delay: 240ms;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .video-panel,
+    .review-channel-card,
+    .sales-proof-card,
+    .benefit-image-card,
+    .testimonial-proof,
+    .application-pricing-card {
+        transform: perspective(1200px) translateZ(0);
+        transform-origin: center;
+        transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, filter 220ms ease;
+        will-change: transform;
+    }
+
+    .video-panel:hover,
+    .review-channel-card:hover,
+    .sales-proof-card:hover,
+    .benefit-image-card:hover,
+    .testimonial-proof:hover,
+    .application-pricing-card:hover {
+        border-color: rgba(255, 75, 39, 0.9);
+        box-shadow: 0 34px 72px rgba(0, 0, 0, 0.46), 0 0 0 1px rgba(255, 217, 90, 0.18);
+        filter: brightness(1.03) contrast(1.02);
+        transform: perspective(1200px) translateY(-8px) scale(1.018) rotateX(0.8deg);
+        z-index: 3;
+    }
+
+    .cta-btn:hover,
+    .large-action-btn:hover {
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34), 0 0 0 2px rgba(255, 217, 90, 0.22);
+        transform: translateY(-5px) scale(1.035);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
