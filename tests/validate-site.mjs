@@ -108,6 +108,19 @@ assert.ok(existsSync(resolve(root, 'resellcoach-naver-reviews.png')), 'The suppl
 assert.ok(html.includes('실제 수강생분들의 따끈한 후기를 보고 싶으시면 네이버에<br>&quot;리셀이코치&quot; 카페로 오시면 보실 수 있습니다.'), 'The requested Naver cafe guidance should use the exact two-line layout');
 assert.ok(!html.includes('&quot;리셀이코치&quot; 채널로'), 'The old channel wording should be removed');
 assert.ok(css.includes('.review-channel-card'), 'The Naver review channel card should have a dedicated style');
+for (const phrase of [
+  '미국 고객이랑 통화를 하지 않고 아마존 담당자들이랑 연락을 할 필요가 거의 없습니다. 그렇기 때문에 영어를 거의 쓰지 않고 상품 등록 할 때 쓰는 영어는 AI로 도움을 다 받으실 수 있습니다.',
+  '원하시는 매출에 따라 다르기는 하나 한달에 100만원 순익을 가져가시려면 약 300만원 정도 초기 비용은 있으셔야 합니다. 만약 없으시다면 신용 카드로 물건을 사입해서 하는 것으로 진행하시면 됩니다.',
+  '매일 퇴근하고 나서 하루에 30분에서 1시간씩만 꾸준히 투자하면 한달에 몇십만원은 버실 수 있습니다. 하루에 5시간 하는 것보다는 적은 시간이라도 꾸준하게 하시는 게 중요합니다.',
+  '강의만 들으면 바로 따라 할 수 있나요?',
+  '무조건 따라 할 수 있도록 모든 커리큘럼을 전면 개편하였습니다. 미니 강의들과 가이드 영상들을 보시고 따라만 하셔도 아마존 가입, 소싱, 등록, 발송까지 다 하실 수 있습니다. 초보자 강의이니 충분히 따라오실 수 있습니다.',
+]) {
+  assert.ok(html.includes(phrase), `FAQ should include ${phrase}`);
+}
+assert.ok(css.includes('.faq-section .section-header .eyebrow'), 'FAQ eyebrow should have a dedicated prominent style');
+assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'), 'FAQ eyebrow should be larger than the FAQ heading');
+assert.ok(css.includes('.faq-list summary'), 'FAQ questions should have a dedicated style');
+assert.ok(css.includes('font-size: clamp(1.35rem, 2.2vw, 1.75rem)'), 'FAQ questions should be larger and easier to read');
 assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 2);
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
 for (const phrase of [

@@ -1128,6 +1128,14 @@ footer {
     color: var(--color-muted);
 }
 
+.faq-section .section-header .eyebrow {
+    color: #ff3b24;
+    font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+}
+
 .market-section .section-header {
     margin-left: auto;
     margin-right: auto;
@@ -1662,12 +1670,15 @@ footer {
 
 .faq-list summary {
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
     font-weight: 900;
+    line-height: 1.35;
 }
 
 .faq-list p {
     color: #50596b;
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.75;
     padding-top: 0.85rem;
 }
 
