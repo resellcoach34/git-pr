@@ -129,6 +129,10 @@ assert.ok(css.includes('@media (hover: hover) and (pointer: fine)'), 'Depth hove
 assert.ok(css.includes('translateY(-8px) scale(1.018)'), 'Image cards should lift forward with subtle depth');
 assert.ok(css.includes('translateY(-5px) scale(1.035)'), 'Buttons should lift forward on hover');
 assert.ok(css.includes('.video-panel,'), 'Main image and media cards should share the depth effect');
+assert.ok(css.includes('background: rgba(255, 255, 255, 0.07)'), 'Each navigation item should have its own visible background');
+assert.ok(css.includes('border: 1px solid rgba(255, 255, 255, 0.18)'), 'Each navigation item should have its own separator border');
+assert.ok(css.includes('padding: 0.32em 0.58em'), 'Navigation items should have enough inner spacing to read as separate buttons');
+assert.ok(css.includes('background: rgba(255, 75, 39, 0.18)'), 'Schedule navigation button should remain more strongly highlighted');
 assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 2);
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
 for (const phrase of [
