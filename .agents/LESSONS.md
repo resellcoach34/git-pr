@@ -1,5 +1,7 @@
 # Lessons and Failure Prevention
 
+- Codex 브라우저 연결이 `Cannot redefine property: process`로 실패할 때 빈 헤드리스 캡처를 화면 검증 근거로 사용하지 않고, 자동 테스트와 운영 HTML·CSS 검증 결과 및 시각 검증 제한을 명확히 보고한다.
+
 - Git 원격 주소는 추측하지 말고 `git remote -v`와 실제 저장소 URL을 확인한다.
 - PowerShell 실행 정책 때문에 `npm` 대신 `npm.cmd`를 사용한다.
 - Vercel CLI 연결 정보 `.vercel/`은 `.gitignore`로 비공개 유지한다.

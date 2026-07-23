@@ -129,6 +129,11 @@ for (const phrase of [
 }
 assert.equal([...html.matchAll(/class="curriculum-card/g)].length, 4, 'Curriculum should include four weekly cards');
 assert.ok(css.includes('.curriculum-item-detail'), 'Curriculum should style item descriptions');
+assert.ok(css.includes('width: min(100% - 40px, 1360px)'), 'Curriculum should use a wider desktop container');
+assert.ok(css.includes('grid-template-columns: repeat(2, minmax(0, 1fr))'), 'Curriculum items should spread across two columns on wide screens');
+assert.ok(css.includes('font-size: clamp(1.65rem, 2.2vw, 2rem)'), 'Curriculum headings should be larger');
+assert.ok(css.includes('font-size: 1.12rem'), 'Curriculum item labels should be larger');
+assert.ok(css.includes('font-size: 1rem'), 'Curriculum item details should be larger');
 assert.equal([...html.matchAll(/<details/g)].length, 4);
 assert.ok(!html.includes('href="#"'), 'Links should point to destinations');
 assert.ok(!html.includes('style="'), 'Inline styles should not be used');
