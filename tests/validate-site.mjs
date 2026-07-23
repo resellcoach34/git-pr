@@ -41,7 +41,7 @@ for (const phrase of [
   'US$59,025.96',
   '약 9,000만원',
   '혼자 다음 상품을 준비할 수 있도록',
-  '수강 신청은 스마트스토어에서 바로 진행할 수 있습니다',
+  '수강신청 : 스마트스토어 링크에서!',
   'large-action-btn',
   'smartstore-icon',
   '스마트스토어에서 결제하기',
@@ -91,6 +91,9 @@ assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'),
 assert.ok(css.includes('color: #ff3b24'), 'Testimonials eyebrow should be red');
 assert.ok(css.includes('.testimonial-period'), 'Testimonials cohort note should have a dedicated style');
 assert.ok(css.includes('.floating-kakao-copy .floating-kakao-code'), 'Floating Kakao participation code should have a readable dedicated style');
+assert.ok(css.includes('.application-container .eyebrow'), 'Application eyebrow should have a section-specific style');
+assert.ok(css.includes('font-size: clamp(2.525rem, calc(5vw + 6px), 4.625rem)'), 'Application eyebrow should be slightly larger than the application heading');
+assert.ok(css.includes('color: #ff3b24'), 'Application eyebrow should be red');
 
 assert.equal([...html.matchAll(/class="video-panel"/g)].length, 3);
 assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 3);
