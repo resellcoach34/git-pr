@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-07-23
+Last updated: 2026-09-14
 
 ## Product
 
@@ -27,6 +27,8 @@ Last updated: 2026-07-23
 - Production deploy: `npx.cmd --yes vercel@50.28.0 deploy --prod --yes --scope resellcoach34s-projects`
 
 ## Recent Completed Work
+
+- 2026-09-14 신청 영역 강의료 배너를 사용자 제공 10월 6일 시작 일정 이미지로 교체하고 원본 크기 및 대체 텍스트 갱신
 
 - 2026-07-23 상단 로고와 메뉴 글자를 이전 확대 크기의 약 절반으로 줄이고 헤더 높이와 모바일 여백 재조정
 - 2026-07-23 신청 영역 강의료 배너를 8월 1일 시작 일정이 반영된 최신 이미지로 교체
