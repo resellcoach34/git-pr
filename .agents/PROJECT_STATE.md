@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-09-14
+Last updated: 2026-09-16
 
 ## Product
 
@@ -27,6 +27,8 @@ Last updated: 2026-09-14
 - Production deploy: `npx.cmd --yes vercel@50.28.0 deploy --prod --yes --scope resellcoach34s-projects`
 
 ## Recent Completed Work
+
+- 2026-09-16 신청 영역 강의 안내를 사용자 제공 최신 이미지로 교체: 10월 12일 오리엔테이션, 10월 24일·31일 및 11월 7일 수업. 대체 텍스트와 회귀 테스트 갱신, npm test 및 git diff --check 통과. main 푸시(a05041c)와 운영 배포(dpl_APU6nvQBfHutKrr9ti55jJEdn6s6, READY) 완료. 대표 도메인 HTTPS 200·apex 308, PC 및 375px 모바일 이미지·가로 넘침·콘솔 오류와 일정 확인 메뉴 동작 검증 통과.
 
 - 2026-09-14 Vercel 로그인 복구 후 10월 배너 운영 배포 완료 (dpl_AmUVNiE7jxgDxQqfJSi2ckRj4jwb, READY). 대표 도메인 HTTPS 200, apex 308, 데스크톱 및 375px 모바일 이미지 로딩·가로 넘침·콘솔 오류 검증 통과.
 
