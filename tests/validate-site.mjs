@@ -1,6 +1,7 @@
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 
 const root = resolve(import.meta.dirname, '..');
 const read = (file) => readFileSync(resolve(root, file), 'utf8');
@@ -71,8 +72,8 @@ assert.ok(!html.includes('https://smartstore.naver.com/benefitothers'), 'Old Sma
 assert.ok(!html.includes('KAKAO_OPEN_CHAT_URL_PLACEHOLDER'), 'Kakao placeholder should be replaced');
 assert.ok(html.includes('class="application-pricing-card"'), 'Application section should include the pricing image card');
 assert.ok(html.includes('src="course-fee-schedule.jpg"'), 'Application section should use the supplied pricing image');
-assert.equal(statSync(resolve(root, 'course-fee-schedule.jpg')).size, 843690, 'Application pricing image should use the newly supplied October schedule banner');
-assert.ok(html.includes('alt="온라인반·서울 오프라인반 강의 안내: 10월 12일 오리엔테이션, 10월 24일·31일 및 11월 7일 수업, 오후 1시~6시, 얼리버드 온라인 239만원·오프라인 279만원"'), 'Application pricing image alt text should describe the updated October schedule');
+assert.equal(createHash('sha256').update(readFileSync(resolve(root, 'course-fee-schedule.jpg'))).digest('hex'), '431afb53786ab92517e1917c6004630cfe99b3b81d1c8958e49324cf57dd80cf', 'Application pricing image should match the newly supplied banner');
+assert.ok(html.includes('alt="온라인반·서울 오프라인반 강의 안내: 10월 12일 오리엔테이션, 10월 24일·31일 및 11월 7일 수업, 오후 1시~6시, 얼리버드 온라인 259만원·오프라인 279만원"'), 'Application pricing image alt text should describe the updated pricing');
 assert.ok(!html.includes('일정 확정 후 안내되는 내용'), 'Old application guide should be removed');
 assert.ok(!html.includes('강의 날짜와 진행 시간'), 'Old application guide items should be removed');
 assert.ok(html.includes('<p class="eyebrow">수강생 후기</p>'), 'Testimonials should use the requested eyebrow copy');
