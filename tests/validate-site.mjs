@@ -136,17 +136,16 @@ assert.ok(css.includes('background: rgba(255, 255, 255, 0.07)'), 'Each navigatio
 assert.ok(css.includes('border: 1px solid rgba(255, 255, 255, 0.18)'), 'Each navigation item should have its own separator border');
 assert.ok(css.includes('padding: 0.32em 0.58em'), 'Navigation items should have enough inner spacing to read as separate buttons');
 assert.ok(css.includes('background: rgba(255, 75, 39, 0.18)'), 'Schedule navigation button should remain more strongly highlighted');
-assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 1);
+assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 0);
 assert.match(css, /\.video-section \.section-header h2\s*\{[^}]*word-break: keep-all/s, 'Video heading should wrap between Korean words');
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
 for (const phrase of [
-  '아마존 특강을 통해 아마존을 배워보세요!',
-  '<h3>아마존 특강</h3>',
-  'https://img.youtube.com/vi/iNW2YopuNWA/hqdefault.jpg',
+  '아마존 특강을 통해<br>아마존을 배워보세요! (아래 링크 클릭)',
+  'amazon-lecture-thumbnail.png',
 ]) {
   assert.ok(html.includes(phrase), `Video cards should include ${phrase}`);
 }
-assert.equal([...html.matchAll(/href="https:\/\/youtu.be\/iNW2YopuNWA"/g)].length, 3, 'Hero, preview and text link should open the replacement video');
+assert.equal([...html.matchAll(/href="https:\/\/youtu.be\/iNW2YopuNWA"/g)].length, 2, 'Hero and image should open the replacement video');
 for (const old of ['F3MCYv_JkEo', 'kX3KF7lGAtY', '신청 전, 영상으로 먼저 확인하세요']) {
   assert.ok(!html.includes(old), `Old video content should be removed: ${old}`);
 }
@@ -244,3 +243,7 @@ for (const file of ['profile-arms-crossed.jpg', 'profile-smile.jpg', 'sales-june
 }
 
 console.log('Site validation passed.');
+
+assert.ok(!html.includes('class="video-copy"'), 'White video copy panel should be removed');
+assert.ok(css.includes('grid-template-columns: minmax(0, 1fr)'), 'Video should occupy the full panel');
+assert.equal(createHash('sha256').update(readFileSync(resolve(root, 'amazon-lecture-thumbnail.png'))).digest('hex'), '4409d2afb2e80b42752c827e3e06ac56568d84b765bb1c41818fbc01118bd93c', 'Use supplied original thumbnail without quality loss');
