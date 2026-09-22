@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-09-18
+Last updated: 2026-09-22
 
 ## Product
 
@@ -27,6 +27,8 @@ Last updated: 2026-09-18
 - Production deploy: `npx.cmd --yes vercel@50.28.0 deploy --prod --yes --scope resellcoach34s-projects`
 
 ## Recent Completed Work
+
+- 2026-09-22 기존 영상 두 개를 iNW2YopuNWA 아마존 특강 하나로 교체하고 제목을 요청 문구로 변경. 상단 강의 링크도 새 영상으로 통일하고 제목에 단어 단위 줄바꿈 적용. 회귀 테스트 실패 후 구현, npm test 및 git diff --check 통과. main 푸시(128286e), 운영 배포(dpl_GTJqCUryXGg1fj6deUijY66nkP4V, READY) 완료. 로컬과 대표 도메인 PC·375px 모바일 렌더링, 썸네일, 가로 넘침 없음, 콘솔 오류 없음, YouTube 새 탭 목적지 및 HTTPS 200·apex 308 확인.
 
 - 2026-09-18 신청 영역 강의 안내를 사용자 제공 두 번째 이미지로 교체: 온라인반 얼리버드 259만원, 오프라인반 279만원. 대체 텍스트와 이미지 회귀 검증 갱신. `npm.cmd test` 및 `git diff --check` 통과, main 푸시(446809d), 운영 배포(dpl_8ezRsUaK2BqtcE7KxjcmnV7RkAbv, READY) 완료. 대표 도메인 HTTPS 200·apex 308 및 운영 이미지 SHA-256 일치 확인. 헤드리스 브라우저가 빈 화면을 캡처하여 데스크톱·375px 렌더링과 콘솔 검증은 미완료.
 
