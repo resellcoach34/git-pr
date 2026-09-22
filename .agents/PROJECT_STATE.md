@@ -28,6 +28,8 @@ Last updated: 2026-09-22
 
 ## Recent Completed Work
 
+- 2026-09-22 영상 제목의 (아래 링크 클릭) 문구만 삭제. 회귀 테스트 실패 후 수정, npm test 및 git diff --check 통과. main 7a86c01 푸시, 운영 배포 dpl_HdA1E2zXKBD5f5AReXXTudf42Ttq READY. 운영 PC·375px 모바일 제목, 이미지, 콘솔 오류 없음, HTTPS 200·apex 308 확인.
+
 - 2026-09-22 사용자 제공 원본 PNG(1280×720)를 영상 썸네일로 적용하고 흰색 설명 패널 제거. 제목을 아마존 특강을 통해 뒤에서 줄바꿈하고 (아래 링크 클릭) 추가. 원본 SHA-256 일치 및 회귀 테스트 통과. main 618168d 푸시, 운영 배포 dpl_YNsF7ui1uF5BdACKWZN7iCE8jgQu READY. 로컬·운영 PC와 375px 모바일 렌더링, 이미지 로딩, 가로 넘침 없음, 콘솔 오류 없음, 이미지 클릭 YouTube 이동, HTTPS 200 및 apex 308 확인.
 
 - 2026-09-22 기존 영상 두 개를 iNW2YopuNWA 아마존 특강 하나로 교체하고 제목을 요청 문구로 변경. 상단 강의 링크도 새 영상으로 통일하고 제목에 단어 단위 줄바꿈 적용. 회귀 테스트 실패 후 구현, npm test 및 git diff --check 통과. main 푸시(128286e), 운영 배포(dpl_GTJqCUryXGg1fj6deUijY66nkP4V, READY) 완료. 로컬과 대표 도메인 PC·375px 모바일 렌더링, 썸네일, 가로 넘침 없음, 콘솔 오류 없음, YouTube 새 탭 목적지 및 HTTPS 200·apex 308 확인.
