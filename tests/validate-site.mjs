@@ -140,7 +140,7 @@ assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 0);
 assert.match(css, /\.video-section \.section-header h2\s*\{[^}]*word-break: keep-all/s, 'Video heading should wrap between Korean words');
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
 for (const phrase of [
-  '아마존 특강을 통해<br>아마존을 배워보세요! (아래 링크 클릭)',
+  '아마존 특강을 통해<br>아마존을 배워보세요!',
   'amazon-lecture-thumbnail.png',
 ]) {
   assert.ok(html.includes(phrase), `Video cards should include ${phrase}`);
@@ -247,3 +247,5 @@ console.log('Site validation passed.');
 assert.ok(!html.includes('class="video-copy"'), 'White video copy panel should be removed');
 assert.ok(css.includes('grid-template-columns: minmax(0, 1fr)'), 'Video should occupy the full panel');
 assert.equal(createHash('sha256').update(readFileSync(resolve(root, 'amazon-lecture-thumbnail.png'))).digest('hex'), '4409d2afb2e80b42752c827e3e06ac56568d84b765bb1c41818fbc01118bd93c', 'Use supplied original thumbnail without quality loss');
+
+assert.ok(!html.includes('(아래 링크 클릭)'), 'Remove click instruction from heading');
