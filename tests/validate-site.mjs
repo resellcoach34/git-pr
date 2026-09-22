@@ -27,7 +27,6 @@ for (const phrase of [
   '아마존 셀러 3년차',
   '한국에서 싸게 사서 미국에 마진 붙여서 판매하는 것입니다.',
   '아마존 무료 강의 보러가기',
-  '리셀이코치에게 교육 받기',
   '아마존 A-Z까지<br>같이 옆에서 알려드립니다',
   '아직도 쿠팡에서<br>판매하시나요?',
   '그래서 저는 블루오션 아마존에서 한국 상품을 팔고 있습니다.',
@@ -249,3 +248,5 @@ assert.ok(css.includes('grid-template-columns: minmax(0, 1fr)'), 'Video should o
 assert.equal(createHash('sha256').update(readFileSync(resolve(root, 'amazon-lecture-thumbnail.png'))).digest('hex'), '4409d2afb2e80b42752c827e3e06ac56568d84b765bb1c41818fbc01118bd93c', 'Use supplied original thumbnail without quality loss');
 
 assert.ok(!html.includes('(아래 링크 클릭)'), 'Remove click instruction from heading');
+
+assert.ok(!html.includes('리셀이코치에게 교육 받기'), 'Remove education CTA from hero');
