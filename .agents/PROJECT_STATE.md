@@ -28,6 +28,8 @@ Last updated: 2026-09-22
 
 ## Recent Completed Work
 
+- 2026-09-22 상단 리셀이코치에게 교육 받기 버튼 삭제. 회귀 테스트 실패 후 구현, npm test 및 git diff --check 통과. main c2db7f8 푸시, 운영 배포 dpl_D31zSgrHttnfTkmZgCHxT3p3PEfX READY. 로컬·운영 PC 및 375px 모바일 배치, 무료 강의 링크 유지, 가로 넘침·콘솔 오류 없음, HTTPS 200·apex 308 확인.
+
 - 2026-09-22 영상 제목의 (아래 링크 클릭) 문구만 삭제. 회귀 테스트 실패 후 수정, npm test 및 git diff --check 통과. main 7a86c01 푸시, 운영 배포 dpl_HdA1E2zXKBD5f5AReXXTudf42Ttq READY. 운영 PC·375px 모바일 제목, 이미지, 콘솔 오류 없음, HTTPS 200·apex 308 확인.
 
 - 2026-09-22 사용자 제공 원본 PNG(1280×720)를 영상 썸네일로 적용하고 흰색 설명 패널 제거. 제목을 아마존 특강을 통해 뒤에서 줄바꿈하고 (아래 링크 클릭) 추가. 원본 SHA-256 일치 및 회귀 테스트 통과. main 618168d 푸시, 운영 배포 dpl_YNsF7ui1uF5BdACKWZN7iCE8jgQu READY. 로컬·운영 PC와 375px 모바일 렌더링, 이미지 로딩, 가로 넘침 없음, 콘솔 오류 없음, 이미지 클릭 YouTube 이동, HTTPS 200 및 apex 308 확인.
