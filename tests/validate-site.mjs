@@ -100,8 +100,8 @@ assert.ok(css.includes('white-space: nowrap'), 'Application eyebrow should stay 
 assert.ok(!html.includes('결제를 먼저 진행하고 싶은 분은 스마트스토어 버튼을 눌러 신청할 수 있습니다.'), 'Application description should be removed without leaving placeholder copy');
 assert.ok(css.includes('.application-container h2 + .commerce-actions'), 'Application buttons should follow the heading without the removed paragraph gap');
 
-assert.equal([...html.matchAll(/class="video-panel"/g)].length, 2, 'Only the first two YouTube video panels should remain');
-assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 2, 'Only the first two YouTube previews should remain');
+assert.equal([...html.matchAll(/class="video-panel"/g)].length, 1, 'Only the replacement video panel should remain');
+assert.equal([...html.matchAll(/class="video-frame video-preview"/g)].length, 1, 'Only the replacement preview should remain');
 assert.ok(!html.includes('VIDEO 03'), 'The old third video card should be removed');
 assert.ok(!html.includes('RAnbg3Kjm38'), 'The old third video link should be removed');
 assert.ok(html.includes('class="review-channel-card'), 'The third video position should use the Naver review channel card');
@@ -136,15 +136,19 @@ assert.ok(css.includes('background: rgba(255, 255, 255, 0.07)'), 'Each navigatio
 assert.ok(css.includes('border: 1px solid rgba(255, 255, 255, 0.18)'), 'Each navigation item should have its own separator border');
 assert.ok(css.includes('padding: 0.32em 0.58em'), 'Navigation items should have enough inner spacing to read as separate buttons');
 assert.ok(css.includes('background: rgba(255, 75, 39, 0.18)'), 'Schedule navigation button should remain more strongly highlighted');
-assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 2);
+assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 1);
+assert.match(css, /\.video-section \.section-header h2\s*\{[^}]*word-break: keep-all/s, 'Video heading should wrap between Korean words');
 assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
 for (const phrase of [
-  '아마존에서 물건 판매하는 기초 영상',
-  '(아마존으로 한달에 150만원 버는 법)',
-  '아마존 판매하는 방법 무료 강의',
-  '(리셀이코치 방법을 배워보세요!)',
+  '아마존 특강을 통해 아마존을 배워보세요!',
+  '<h3>아마존 특강</h3>',
+  'https://img.youtube.com/vi/iNW2YopuNWA/hqdefault.jpg',
 ]) {
   assert.ok(html.includes(phrase), `Video cards should include ${phrase}`);
+}
+assert.equal([...html.matchAll(/href="https:\/\/youtu.be\/iNW2YopuNWA"/g)].length, 3, 'Hero, preview and text link should open the replacement video');
+for (const old of ['F3MCYv_JkEo', 'kX3KF7lGAtY', '신청 전, 영상으로 먼저 확인하세요']) {
+  assert.ok(!html.includes(old), `Old video content should be removed: ${old}`);
 }
 assert.ok(css.includes('font-size: clamp(1.7rem, 3.2vw, 2.5rem)'), 'Video titles should use the larger responsive font size');
 assert.ok(css.includes('font-size: clamp(1.05rem, 1.5vw, 1.2rem)'), 'Video descriptions should use the larger responsive font size');

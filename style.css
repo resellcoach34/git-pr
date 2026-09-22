@@ -371,6 +371,10 @@ section {
     margin: 4rem 0 2rem;
 }
 
+.video-section .section-header h2 {
+    word-break: keep-all;
+}
+
 .section-header h2,
 .section-copy h2,
 .application-container h2 {
