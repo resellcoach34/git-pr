@@ -28,6 +28,8 @@ Last updated: 2026-09-23
 
 ## Recent Completed Work
 
+- 2026-09-23 특강 영상을 NAgGlw_--ts로 재교체. 기존 사이트 내 재생 유지. 회귀 테스트 실패 후 링크 교체, npm test·git diff --check 통과. main a728a01 푸시, 운영 배포 dpl_9ZrNUnZy6H9HhHUP5EdrhbgU2jvm READY. 대표 도메인 HTTPS 200 및 실제 영상 재생, 페이지 유지와 브라우저 오류 없음 확인.
+
 - 2026-09-23 특강 영상을 3ut-VcpZwk8로 교체하고 썸네일 클릭 시 사이트 내 iframe 재생 적용. 상단 무료 강의 버튼은 영상 영역으로 이동. 회귀 테스트 실패 후 구현, npm test·git diff --check 통과, main 774bf3b 푸시, 운영 배포 dpl_GkZ43i8wNMwUAF5JX4VfhnVHn8no READY. 로컬·운영 PC 및 375px 모바일 레이아웃, 이미지, 가로 넘침 없음, 콘솔 오류 없음 확인. 별도 브라우저에서 실제 재생 중 일시중지 컨트롤과 대표 도메인 유지 확인. HTTPS 200·apex 308 확인.
 
 - 2026-09-22 상단 리셀이코치에게 교육 받기 버튼 삭제. 회귀 테스트 실패 후 구현, npm test 및 git diff --check 통과. main c2db7f8 푸시, 운영 배포 dpl_D31zSgrHttnfTkmZgCHxT3p3PEfX READY. 로컬·운영 PC 및 375px 모바일 배치, 무료 강의 링크 유지, 가로 넘침·콘솔 오류 없음, HTTPS 200·apex 308 확인.
