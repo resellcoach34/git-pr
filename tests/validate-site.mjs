@@ -137,14 +137,17 @@ assert.ok(css.includes('padding: 0.32em 0.58em'), 'Navigation items should have 
 assert.ok(css.includes('background: rgba(255, 75, 39, 0.18)'), 'Schedule navigation button should remain more strongly highlighted');
 assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 0);
 assert.match(css, /\.video-section \.section-header h2\s*\{[^}]*word-break: keep-all/s, 'Video heading should wrap between Korean words');
-assert.ok(!html.includes('youtube.com/embed'), 'Video previews should avoid embedded player errors');
+assert.ok(!html.includes('<iframe'), 'Load player only after user activation');
+assert.ok(html.includes('aria-label="아마존 특강 재생"'), 'Preview should be a play button');
+assert.ok(js.includes('https://www.youtube.com/embed/3ut-VcpZwk8?autoplay=1&playsinline=1&rel=0'), 'Use inline YouTube player');
+assert.ok(js.includes("preview.replaceWith(player)"), 'Replace thumbnail with player');
 for (const phrase of [
   '아마존 특강을 통해<br>아마존을 배워보세요!',
   'amazon-lecture-thumbnail.png',
 ]) {
   assert.ok(html.includes(phrase), `Video cards should include ${phrase}`);
 }
-assert.equal([...html.matchAll(/href="https:\/\/youtu.be\/iNW2YopuNWA"/g)].length, 2, 'Hero and image should open the replacement video');
+assert.equal([...html.matchAll(/href="https:\/\/youtu.be\/iNW2YopuNWA"/g)].length, 0, 'No old external video link remains');
 for (const old of ['F3MCYv_JkEo', 'kX3KF7lGAtY', '신청 전, 영상으로 먼저 확인하세요']) {
   assert.ok(!html.includes(old), `Old video content should be removed: ${old}`);
 }
@@ -250,3 +253,5 @@ assert.equal(createHash('sha256').update(readFileSync(resolve(root, 'amazon-lect
 assert.ok(!html.includes('(아래 링크 클릭)'), 'Remove click instruction from heading');
 
 assert.ok(!html.includes('리셀이코치에게 교육 받기'), 'Remove education CTA from hero');
+
+assert.match(html, /href="#video-proof" class="cta-btn hero-tab-btn secondary-btn"/, 'Hero should lead to inline video');

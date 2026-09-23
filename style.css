@@ -477,9 +477,25 @@ section {
 }
 
 .video-preview {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
     display: block;
     overflow: hidden;
     position: relative;
+}
+
+.video-player {
+    display: block;
+    width: 100%;
+    min-height: 200px;
+    border: 0;
+}
+
+.video-preview:focus-visible {
+    outline: 3px solid var(--color-yellow);
+    outline-offset: -3px;
 }
 
 .video-preview img {
