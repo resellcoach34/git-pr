@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     preview?.addEventListener('click', () => {
         const player = document.createElement('iframe');
         player.className = 'video-frame video-player';
-        player.src = 'https://www.youtube.com/embed/3ut-VcpZwk8?autoplay=1&playsinline=1&rel=0';
+        player.src = 'https://www.youtube.com/embed/NAgGlw_--ts?autoplay=1&playsinline=1&rel=0';
         player.title = '아마존 특강 영상';
         player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
         player.allowFullscreen = true;

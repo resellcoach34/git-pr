@@ -139,7 +139,7 @@ assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 0);
 assert.match(css, /\.video-section \.section-header h2\s*\{[^}]*word-break: keep-all/s, 'Video heading should wrap between Korean words');
 assert.ok(!html.includes('<iframe'), 'Load player only after user activation');
 assert.ok(html.includes('aria-label="아마존 특강 재생"'), 'Preview should be a play button');
-assert.ok(js.includes('https://www.youtube.com/embed/3ut-VcpZwk8?autoplay=1&playsinline=1&rel=0'), 'Use inline YouTube player');
+assert.ok(js.includes('https://www.youtube.com/embed/NAgGlw_--ts?autoplay=1&playsinline=1&rel=0'), 'Use inline YouTube player');
 assert.ok(js.includes("preview.replaceWith(player)"), 'Replace thumbnail with player');
 for (const phrase of [
   '아마존 특강을 통해<br>아마존을 배워보세요!',
