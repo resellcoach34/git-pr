@@ -28,6 +28,8 @@ Last updated: 2026-09-28
 
 ## Recent Completed Work
 
+- 2026-09-28 전자책 다운로드 배너 → 아마존 특강 제목·영상 → 리셀이코치 소개 순으로 재배치. 기존 네이버 후기 위치 유지. 순서 회귀 테스트가 이전 HEAD를 거부하고 수정본에서 통과함을 확인, npm test·git diff --check 통과. main e44090b 푸시, 운영 배포 dpl_EKv419ujrvzzTfZKLC6odY59xwnr READY. 로컬·운영 PC 및 375px 모바일 배치, 썸네일·프로필 이미지, 가로 넘침·콘솔 오류 없음 확인. 대표 도메인에서 실제 영상 재생과 페이지 유지, HTTPS 200·apex 308 검증.
+
 - 2026-09-28 전자책 배너 최대 폭을 380→820px, 글자를 18→PC 40px·모바일 24px로 확대하고 빨간 PDF 문서 아이콘·다운로드 화살표 추가. 회귀 테스트 실패 후 구현, npm test·git diff --check 통과. main b4dbd9d 푸시, 운영 배포 dpl_2bbDVvkLzKtkxmUYCF3GhvTWvZ5V READY. 로컬·운영 PC 및 375px 모바일 배치·가독성, 사진 로딩, 가로 넘침·콘솔 오류 없음, PDF 새 탭 연결, HTTPS 200·apex 308 확인.
 
 - 2026-09-28 전자책 다운로드 배너를 소개 카드 상단 중앙으로 이동하고 기존 사진·소개 내용을 아래 행에 배치. 고정 메뉴 위 배너 제거 및 여백 복원. 회귀 테스트 실패 후 구현, npm test·git diff --check 통과. main 9482fcc 푸시, 운영 배포 dpl_4KWnTPN5Kxf5oUBTH1NEibJ3vCZq READY. 로컬·운영 PC 및 375px 모바일 배치, 사진 로딩, 가로 넘침·콘솔 오류 없음, Google Drive 새 탭 연결, HTTPS 200·apex 308 확인.
