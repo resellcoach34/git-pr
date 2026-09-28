@@ -66,6 +66,10 @@ assert.equal([...html.matchAll(/class="ebook-banner"/g)].length, 1, 'Ebook banne
 assert.ok(ebookBanner.includes('class="ebook-pdf-icon"') && ebookBanner.includes('PDF'), 'Ebook banner should identify the PDF file visually');
 assert.ok(css.includes('width: min(100%, 820px)'), 'Ebook banner should be wide and responsive');
 assert.ok(css.includes('font-size: clamp(1.5rem, 3.5vw, 2.5rem)'), 'Ebook label should be large on desktop and mobile');
+assert.match(html, /class="ebook-banner"[^>]*>[\s\S]*?<\/a>\s*<section[^>]*id="video-proof"/, 'Lecture section should sit immediately below the ebook banner');
+assert.ok(html.indexOf('id="video-proof"') < html.indexOf('class="hero-content'), 'Lecture should appear before the profile introduction');
+assert.equal([...html.matchAll(/id="video-proof"/g)].length, 1, 'Lecture section should not be duplicated');
+assert.ok(html.indexOf('class="review-channel-card') > html.indexOf('id="instructor"'), 'Naver review card should stay below the instructor section');
 assert.ok(!hero.includes('스마트스토어'), 'Hero should not expose payment');
 assert.ok(!hero.includes('카카오톡'), 'Hero should not expose Kakao inquiry');
 assert.ok(!hero.includes('가격'), 'Hero should not expose price');

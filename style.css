@@ -476,6 +476,19 @@ section {
     background: var(--color-canvas-soft);
 }
 
+.hero-video {
+    grid-column: 1 / -1;
+    min-width: 0;
+    width: 100%;
+    padding: clamp(24px, 4vw, 48px) 0;
+    border-radius: 8px;
+    color: var(--color-text);
+}
+
+.hero-video .section-header h2 {
+    font-size: clamp(1.75rem, 4.5vw, 3.75rem);
+}
+
 .reason-section,
 .ebook-section,
 .curriculum-section {
