@@ -16,7 +16,6 @@
     --radius-button: 999px;
     --space-section: 92px;
     --nav-height: clamp(68px, 5vw, 82px);
-    --ebook-banner-height: 48px;
     --shadow-elevated: 0 22px 60px rgba(31, 47, 128, 0.28);
     --transition-standard: 180ms ease;
 }
@@ -56,7 +55,7 @@ ol {
 }
 
 .section-anchor {
-    scroll-margin-top: calc(var(--nav-height) + var(--ebook-banner-height) + 24px);
+    scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
 .container {
@@ -78,13 +77,18 @@ ol {
 }
 
 .ebook-banner {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 380px);
+    border-radius: 8px;
+    box-shadow: 0 6px 0 #dfb738;
     align-items: center;
     background: var(--color-yellow);
     color: var(--color-ink);
     display: flex;
     gap: 12px;
     justify-content: center;
-    min-height: var(--ebook-banner-height);
+    min-height: 64px;
     padding: 8px 20px;
     font-size: 18px;
     line-height: 1.5;
@@ -158,7 +162,7 @@ ol {
         linear-gradient(135deg, #fff7d8 0%, #e8eeff 46%, #dce4ff 100%);
     color: var(--color-ink);
     padding-bottom: 52px;
-    padding-top: calc(var(--nav-height) + var(--ebook-banner-height));
+    padding-top: var(--nav-height);
 }
 
 .hero-top {
@@ -1993,11 +1997,11 @@ footer {
     }
 
     .hero-section {
-        padding-top: calc(118px + var(--ebook-banner-height));
+        padding-top: 118px;
     }
 
     .section-anchor {
-        scroll-margin-top: calc(118px + var(--ebook-banner-height) + 24px);
+        scroll-margin-top: calc(118px + 24px);
     }
 
     .hero-content h1 {
