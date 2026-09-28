@@ -28,6 +28,8 @@ Last updated: 2026-09-28
 
 ## Recent Completed Work
 
+- 2026-09-28 상단 메뉴 위에 노란색 전자책 다운로드 배너 추가. 사용자 제공 Google Drive PDF를 새 탭으로 연결하고 고정 메뉴 높이와 본문·앵커 여백 조정. 회귀 테스트 실패 후 구현, npm test 및 git diff --check 통과. main 49f155c 푸시, 운영 배포 dpl_8pCgR3sXCcMAkwG2EE1vsePntodv READY. 로컬·운영 PC 및 375px 모바일 배너, 가로 넘침·콘솔 오류 없음, 배너 클릭 시 PDF 새 탭 열림 확인. 대표 도메인 HTTPS 200 및 apex 308 확인.
+
 - 2026-09-28 강의 안내를 오리엔테이션이 없는 사용자 제공 원본 이미지(816×1145)로 교체하고 대체 텍스트 갱신. 이미지 SHA-256 회귀 테스트 실패 후 구현, npm test 및 git diff --check 통과. main 5b9ef5f 푸시, 운영 배포 dpl_Aikx8e1DrYzGfy6AR2y3chD3hZyQ READY. 로컬·운영 PC 및 375px 모바일 이미지, 일정 확인 메뉴 이동, 가로 넘침·콘솔 오류 없음 확인. 대표 도메인 HTTPS 200 및 apex 308 확인.
 
 - 2026-09-23 특강 영상을 NAgGlw_--ts로 재교체. 기존 사이트 내 재생 유지. 회귀 테스트 실패 후 링크 교체, npm test·git diff --check 통과. main a728a01 푸시, 운영 배포 dpl_9ZrNUnZy6H9HhHUP5EdrhbgU2jvm READY. 대표 도메인 HTTPS 200 및 실제 영상 재생, 페이지 유지와 브라우저 오류 없음 확인.
