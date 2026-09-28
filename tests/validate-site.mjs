@@ -63,6 +63,9 @@ assert.ok(ebookBanner.includes('전자책 다운로드'), 'Ebook banner should u
 assert.ok(ebookBanner.includes('target="_blank"') && ebookBanner.includes('rel="noopener"'), 'Ebook should open safely in a new tab');
 assert.ok(html.indexOf('class="ebook-banner"') > html.indexOf('class="container hero-container"') && html.indexOf('class="ebook-banner"') < html.indexOf('class="hero-content'), 'Ebook banner should be inside the introduction card above its content and photo');
 assert.equal([...html.matchAll(/class="ebook-banner"/g)].length, 1, 'Ebook banner should appear only once');
+assert.ok(ebookBanner.includes('class="ebook-pdf-icon"') && ebookBanner.includes('PDF'), 'Ebook banner should identify the PDF file visually');
+assert.ok(css.includes('width: min(100%, 820px)'), 'Ebook banner should be wide and responsive');
+assert.ok(css.includes('font-size: clamp(1.5rem, 3.5vw, 2.5rem)'), 'Ebook label should be large on desktop and mobile');
 assert.ok(!hero.includes('스마트스토어'), 'Hero should not expose payment');
 assert.ok(!hero.includes('카카오톡'), 'Hero should not expose Kakao inquiry');
 assert.ok(!hero.includes('가격'), 'Hero should not expose price');

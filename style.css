@@ -79,20 +79,56 @@ ol {
 .ebook-banner {
     grid-column: 1 / -1;
     justify-self: center;
-    width: min(100%, 380px);
+    width: min(100%, 820px);
     border-radius: 8px;
     box-shadow: 0 6px 0 #dfb738;
     align-items: center;
     background: var(--color-yellow);
     color: var(--color-ink);
     display: flex;
-    gap: 12px;
+    gap: clamp(10px, 2.5vw, 28px);
     justify-content: center;
-    min-height: 64px;
-    padding: 8px 20px;
-    font-size: 18px;
-    line-height: 1.5;
+    min-height: 112px;
+    padding: 20px 12px;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    line-height: 1.35;
     transition: background var(--transition-standard);
+}
+
+.ebook-banner strong {
+    font-weight: 900;
+    word-break: keep-all;
+}
+
+.ebook-pdf-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: clamp(38px, 5vw, 58px);
+    height: clamp(48px, 6vw, 72px);
+    padding-top: 10px;
+    border-radius: 5px;
+    background: #b82025;
+    color: #fff;
+    font: 900 clamp(13px, 1.7vw, 20px) / 1 'Inter', sans-serif;
+    clip-path: polygon(0 0, 70% 0, 100% 24%, 100% 100%, 0 100%);
+}
+
+.ebook-pdf-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 24%;
+    background: #f6a8aa;
+}
+
+.ebook-download-icon {
+    flex: 0 0 auto;
+    font-weight: 900;
 }
 
 .ebook-banner:hover {
