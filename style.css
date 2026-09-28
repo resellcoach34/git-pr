@@ -16,6 +16,7 @@
     --radius-button: 999px;
     --space-section: 92px;
     --nav-height: clamp(68px, 5vw, 82px);
+    --ebook-banner-height: 48px;
     --shadow-elevated: 0 22px 60px rgba(31, 47, 128, 0.28);
     --transition-standard: 180ms ease;
 }
@@ -55,7 +56,7 @@ ol {
 }
 
 .section-anchor {
-    scroll-margin-top: calc(var(--nav-height) + 24px);
+    scroll-margin-top: calc(var(--nav-height) + var(--ebook-banner-height) + 24px);
 }
 
 .container {
@@ -74,6 +75,29 @@ ol {
     inset: 0 0 auto;
     position: fixed;
     z-index: 20;
+}
+
+.ebook-banner {
+    align-items: center;
+    background: var(--color-yellow);
+    color: var(--color-ink);
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    min-height: var(--ebook-banner-height);
+    padding: 8px 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    transition: background var(--transition-standard);
+}
+
+.ebook-banner:hover {
+    background: #ffe58c;
+}
+
+.ebook-banner:focus-visible {
+    outline: 3px solid var(--color-blue-ink);
+    outline-offset: -5px;
 }
 
 .nav-container {
@@ -134,7 +158,7 @@ ol {
         linear-gradient(135deg, #fff7d8 0%, #e8eeff 46%, #dce4ff 100%);
     color: var(--color-ink);
     padding-bottom: 52px;
-    padding-top: var(--nav-height);
+    padding-top: calc(var(--nav-height) + var(--ebook-banner-height));
 }
 
 .hero-top {
@@ -1969,7 +1993,11 @@ footer {
     }
 
     .hero-section {
-        padding-top: 118px;
+        padding-top: calc(118px + var(--ebook-banner-height));
+    }
+
+    .section-anchor {
+        scroll-margin-top: calc(118px + var(--ebook-banner-height) + 24px);
     }
 
     .hero-content h1 {

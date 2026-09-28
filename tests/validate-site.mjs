@@ -56,6 +56,12 @@ for (const phrase of [
 }
 
 const hero = html.slice(html.indexOf('<header'), html.indexOf('</header>'));
+const ebookBanner = html.match(/<a class="ebook-banner"[^>]*>[\s\S]*?<\/a>/)?.[0];
+assert.ok(ebookBanner, 'Top of site should include an ebook download banner');
+assert.ok(ebookBanner.includes('href="https://drive.google.com/file/d/1NtZtZ_V6s0uvUrSu7dWN3FpTxNUM6Go4/view?usp=drive_link"'), 'Ebook banner should open the supplied Drive file');
+assert.ok(ebookBanner.includes('전자책 다운로드'), 'Ebook banner should use the requested label');
+assert.ok(ebookBanner.includes('target="_blank"') && ebookBanner.includes('rel="noopener"'), 'Ebook should open safely in a new tab');
+assert.ok(html.indexOf('class="ebook-banner"') < html.indexOf('class="container nav-container"'), 'Ebook banner should appear above the navigation');
 assert.ok(!hero.includes('스마트스토어'), 'Hero should not expose payment');
 assert.ok(!hero.includes('카카오톡'), 'Hero should not expose Kakao inquiry');
 assert.ok(!hero.includes('가격'), 'Hero should not expose price');
