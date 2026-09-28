@@ -28,6 +28,8 @@ Last updated: 2026-09-28
 
 ## Recent Completed Work
 
+- 2026-09-28 전자책 다운로드 배너를 소개 카드 상단 중앙으로 이동하고 기존 사진·소개 내용을 아래 행에 배치. 고정 메뉴 위 배너 제거 및 여백 복원. 회귀 테스트 실패 후 구현, npm test·git diff --check 통과. main 9482fcc 푸시, 운영 배포 dpl_4KWnTPN5Kxf5oUBTH1NEibJ3vCZq READY. 로컬·운영 PC 및 375px 모바일 배치, 사진 로딩, 가로 넘침·콘솔 오류 없음, Google Drive 새 탭 연결, HTTPS 200·apex 308 확인.
+
 - 2026-09-28 상단 메뉴 위에 노란색 전자책 다운로드 배너 추가. 사용자 제공 Google Drive PDF를 새 탭으로 연결하고 고정 메뉴 높이와 본문·앵커 여백 조정. 회귀 테스트 실패 후 구현, npm test 및 git diff --check 통과. main 49f155c 푸시, 운영 배포 dpl_8pCgR3sXCcMAkwG2EE1vsePntodv READY. 로컬·운영 PC 및 375px 모바일 배너, 가로 넘침·콘솔 오류 없음, 배너 클릭 시 PDF 새 탭 열림 확인. 대표 도메인 HTTPS 200 및 apex 308 확인.
 
 - 2026-09-28 강의 안내를 오리엔테이션이 없는 사용자 제공 원본 이미지(816×1145)로 교체하고 대체 텍스트 갱신. 이미지 SHA-256 회귀 테스트 실패 후 구현, npm test 및 git diff --check 통과. main 5b9ef5f 푸시, 운영 배포 dpl_Aikx8e1DrYzGfy6AR2y3chD3hZyQ READY. 로컬·운영 PC 및 375px 모바일 이미지, 일정 확인 메뉴 이동, 가로 넘침·콘솔 오류 없음 확인. 대표 도메인 HTTPS 200 및 apex 308 확인.
