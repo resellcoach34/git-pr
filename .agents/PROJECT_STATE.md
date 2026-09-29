@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-09-28
+Last updated: 2026-09-29
 
 ## Product
 
@@ -27,6 +27,8 @@ Last updated: 2026-09-28
 - Production deploy: `npx.cmd --yes vercel@50.28.0 deploy --prod --yes --scope resellcoach34s-projects`
 
 ## Recent Completed Work
+
+- 2026-09-29 상단 메뉴 5개 제거 및 모바일 메뉴용 여백 정리. 회귀 테스트 실패 후 구현, npm test·git diff --check와 로컬 PC·375px 화면 확인 통과. 운영 배포 검증 진행 중.
 
 - 2026-09-28 전자책 다운로드 배너 → 아마존 특강 제목·영상 → 리셀이코치 소개 순으로 재배치. 기존 네이버 후기 위치 유지. 순서 회귀 테스트가 이전 HEAD를 거부하고 수정본에서 통과함을 확인, npm test·git diff --check 통과. main e44090b 푸시, 운영 배포 dpl_EKv419ujrvzzTfZKLC6odY59xwnr READY. 로컬·운영 PC 및 375px 모바일 배치, 썸네일·프로필 이미지, 가로 넘침·콘솔 오류 없음 확인. 대표 도메인에서 실제 영상 재생과 페이지 유지, HTTPS 200·apex 308 검증.
 

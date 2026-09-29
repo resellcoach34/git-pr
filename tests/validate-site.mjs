@@ -138,17 +138,12 @@ assert.ok(css.includes('.faq-list summary'), 'FAQ questions should have a dedica
 assert.ok(css.includes('font-size: clamp(1.55rem, 2.6vw, 2rem)'), 'FAQ questions should be enlarged again for readability');
 assert.ok(css.includes('font-size: clamp(1.25rem, 1.8vw, 1.4rem)'), 'FAQ answers should be clearly readable on mobile and desktop');
 assert.ok(css.includes('font-size: clamp(1.1rem, 1.7vw, 1.6rem)'), 'Navbar logo should be reduced to roughly half its enlarged size');
-assert.ok(css.includes('font-size: clamp(0.9rem, 1.5vw, 1.42rem)'), 'Navbar links should be reduced to roughly half their enlarged size');
 assert.ok(css.includes('--nav-height: clamp(68px, 5vw, 82px)'), 'Navbar height should shrink with the reduced typography');
 assert.ok(css.includes('width: min(1600px, calc(100% - 40px))'), 'Enlarged desktop navigation should have enough horizontal room');
 assert.ok(css.includes('@media (hover: hover) and (pointer: fine)'), 'Depth hover effects should only run on precise hover devices');
 assert.ok(css.includes('translateY(-8px) scale(1.018)'), 'Image cards should lift forward with subtle depth');
 assert.ok(css.includes('translateY(-5px) scale(1.035)'), 'Buttons should lift forward on hover');
 assert.ok(css.includes('.video-panel,'), 'Main image and media cards should share the depth effect');
-assert.ok(css.includes('background: rgba(255, 255, 255, 0.07)'), 'Each navigation item should have its own visible background');
-assert.ok(css.includes('border: 1px solid rgba(255, 255, 255, 0.18)'), 'Each navigation item should have its own separator border');
-assert.ok(css.includes('padding: 0.32em 0.58em'), 'Navigation items should have enough inner spacing to read as separate buttons');
-assert.ok(css.includes('background: rgba(255, 75, 39, 0.18)'), 'Schedule navigation button should remain more strongly highlighted');
 assert.equal([...html.matchAll(/img\.youtube\.com\/vi/g)].length, 0);
 assert.match(css, /\.video-section \.section-header h2\s*\{[^}]*word-break: keep-all/s, 'Video heading should wrap between Korean words');
 assert.ok(!html.includes('<iframe'), 'Load player only after user activation');
@@ -269,3 +264,7 @@ assert.ok(!html.includes('(아래 링크 클릭)'), 'Remove click instruction fr
 assert.ok(!html.includes('리셀이코치에게 교육 받기'), 'Remove education CTA from hero');
 
 assert.match(html, /href="#video-proof" class="cta-btn hero-tab-btn secondary-btn"/, 'Hero should lead to inline video');
+
+assert.ok(!html.includes('class="nav-links"'), 'Remove the five header menu buttons');
+assert.ok(!css.includes('.nav-links'), 'Remove unused header menu styles');
+assert.ok(!css.includes('118px'), 'Remove the mobile spacing reserved for menu buttons');
